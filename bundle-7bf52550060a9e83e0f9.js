@@ -600,6 +600,75 @@ function homepage(){
     const projectsIcon = document.getElementById('projects-link-icon');
     projectsIcon.setAttribute('src', _assets_idea_png__WEBPACK_IMPORTED_MODULE_6__);
 
+    // sidebar link event listeners
+    const dashLink = document.getElementById('nav-dash');
+    const projectsLink = document.getElementById('nav-projects');
+    const tasksLink = document.getElementById('tasks-link');
+
+    // Dashboard 
+    dashLink.addEventListener('click', function() {
+        // display dashboard
+
+        // add nav-active class
+        if (!dashLink.classList.contains('nav-active')) {
+            dashLink.classList.add('nav-active');
+        };
+
+        // remove 'nav-active' from projectsLink
+        if (projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.remove('nav-active');
+        };
+
+        // remove 'nav-active' from tasksLink
+        if (tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.remove('nav-active');
+        };
+    });
+
+    // Projects
+    projectsLink.addEventListener('click', function() {
+        // display projects
+
+        // add nav-active class
+        if (!projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.add('nav-active');
+        };
+
+        // remove 'nav-active' from dashboardLink
+        if (dashLink.classList.contains('nav-active')) {
+            dashLink.classList.remove('nav-active');
+        };
+
+        // remove 'nav-active' from tasksLink
+        if (tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.remove('nav-active');
+        };
+    });
+
+    // Tasks
+    tasksLink.addEventListener('click', function() {
+        // display projects
+
+        // add nav-active class
+        if (!tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.add('nav-active');
+        };
+
+        // remove 'nav-active' from projectsLink
+        if (projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.remove('nav-active');
+        };
+
+        // remove 'nav-active' from dashLink
+        if (dashLink.classList.contains('nav-active')) {
+            dashLink.classList.remove('nav-active');
+        };
+    });    
+
+
+
+
+
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homepage);
@@ -737,7 +806,7 @@ module.exports = __webpack_require__.p + "task.png";
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "/taskfox/";
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -753,13 +822,23 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./homepage */ "./src/homepage.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage */ "./src/homepage.js");
 
+
+
+// ON APP OPENING:
+
+// Generate a new defaultProject object
 
 // Build the default template
-(0,_homepage__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_homepage__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+// Display the dashboard 
+
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle-43ab2f24fcaaefda7766.js.map
+//# sourceMappingURL=bundle-7bf52550060a9e83e0f9.js.map
