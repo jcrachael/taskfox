@@ -33,6 +33,7 @@ Coming soon.
     * due date
     * priority
     * project ('Default' by default)
+    * overdue (boolean, default false, only true if due date is passed)
     * notes
 * each 'Project' item will be stored as a JavaScript object with the following properties
     * title
@@ -55,10 +56,40 @@ Coming soon.
     * view all 'Projects'
     * view all 'Todos'
     * view all 'Todos' in a 'Project'
+    * view all overdue 'Todos'
     * expand a 'Todo'
     * edit a 'Todo'/'Project'
     * delete a 'Todo'/'Project'
 * package with webpack
+
+### UI views
+* sidebar (on all pages)
+    * nav links to index, projects and todos views
+    * button for new todo, new project
+* index view
+    * card: total number of todos > click to view todos view
+    * card: total number of projects > click to view projects view
+    * card: total number of overdue todos > click to view overdues view
+* projects view
+    * card for each project with list of todos in the project > click to view that project view
+* project view:
+    * edit task panel on edit button click
+    * list all todos in the project > click a todo to open the edit panel for that todo
+* todos view
+    * list all todos and their properties with option to click on todo to expand the todo view with options to edit/delete the todo
+
+### Colors
+Primary red: #ED533E
+Primary light: #F6F2EF
+Primary dark: #26242E
+Light accent: #ABA2A4
+Dark accent: #928D7E
+Green: #8bc34a
+Yellow: #fdd835
+
+
+### Credits
+Fox icon made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/).
 
 
 --- 
