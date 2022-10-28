@@ -8,8 +8,7 @@ Project sourced from [The Odin Project JavaScript Course](https://www.theodinpro
 ## The Project
 Create a front-end web application where users can define 'Projects' and add 'Todo' items. When a user first opens the app, a 'Default' Project is initiated where 'Todo' items are added by default. The user can create new Projects and choose which Project their 'Todo' item goes into when making each 'Todo' item. The user will be able to edit, delete and 'Mark complete' individual 'Todo' items and 'Projects'.
 
-## Mockup
-Coming soon.
+View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untitled?node-id=3%3A34&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=3%3A34&hide-ui=1).
 
 ## Specifications
 
@@ -34,7 +33,6 @@ Coming soon.
     * priority
     * project ('Default' by default)
     * overdue (boolean, default false, only true if due date is passed)
-    * notes
 * each 'Project' item will be stored as a JavaScript object with the following properties
     * title
     * description
@@ -45,7 +43,7 @@ Coming soon.
 * 'Todo' functionality:
     * edit (title, description, due date, priority, notes, 'Project')
 * 'Project' functionality:
-    * edit (title, description, due date, notes, todos)
+    * edit (title, description, due date, date added, todos)
 * overall functionality:
     * create new 'Todo'
     * create new 'Project'
@@ -86,10 +84,12 @@ Light accent: #ABA2A4
 Dark accent: #928D7E
 Green: #8bc34a
 Yellow: #fdd835
+Urgent red: #E10000
 
 
 ### Credits
 Fox icon made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/).
+Plus, delete, edit, check, minus icons made by [dmitri13](https://www.flaticon.com/authors/dmitri13) from [Flaticon](https://www.flaticon.com/).
 
 
 --- 
