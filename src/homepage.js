@@ -50,6 +50,75 @@ function homepage(){
     const projectsIcon = document.getElementById('projects-link-icon');
     projectsIcon.setAttribute('src', idea);
 
+    // sidebar link event listeners
+    const dashLink = document.getElementById('nav-dash');
+    const projectsLink = document.getElementById('nav-projects');
+    const tasksLink = document.getElementById('nav-tasks');
+
+    // Dashboard 
+    dashLink.addEventListener('click', function() {
+        // display dashboard
+
+        // add nav-active class
+        if (!dashLink.classList.contains('nav-active')) {
+            dashLink.classList.add('nav-active');
+        };
+
+        // remove 'nav-active' from projectsLink
+        if (projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.remove('nav-active');
+        };
+
+        // remove 'nav-active' from tasksLink
+        if (tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.remove('nav-active');
+        };
+    });
+
+    // Projects
+    projectsLink.addEventListener('click', function() {
+        // display projects
+
+        // add nav-active class
+        if (!projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.add('nav-active');
+        };
+
+        // remove 'nav-active' from dashboardLink
+        if (dashLink.classList.contains('nav-active')) {
+            dashLink.classList.remove('nav-active');
+        };
+
+        // remove 'nav-active' from tasksLink
+        if (tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.remove('nav-active');
+        };
+    });
+
+    // Tasks
+    tasksLink.addEventListener('click', function() {
+        // display projects
+
+        // add nav-active class
+        if (!tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.add('nav-active');
+        };
+
+        // remove 'nav-active' from projectsLink
+        if (projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.remove('nav-active');
+        };
+
+        // remove 'nav-active' from dashLink
+        if (dashLink.classList.contains('nav-active')) {
+            dashLink.classList.remove('nav-active');
+        };
+    });    
+
+
+
+
+
 };
 
 export default homepage;

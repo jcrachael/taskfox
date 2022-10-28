@@ -7,7 +7,7 @@ module.exports = {
 
     // set entry
     entry: {
-        bundle: path.resolve(__dirname, 'src/index.js'),
+        bundle: path.resolve(__dirname, './src/index.js'),
     },
 
     // set output
@@ -16,7 +16,7 @@ module.exports = {
         filename: '[name]-[contenthash].js',
         clean: true,
         assetModuleFilename: '[name][ext]',
-        publicPath: '/taskfox/'
+        publicPath: '/'
     },
 
     // dev server
@@ -37,10 +37,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ]
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
