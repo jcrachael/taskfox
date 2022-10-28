@@ -20,36 +20,11 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
         * style.css
     * assets
         * images, etc.
-    * mockups
-        * design mockups
     * README.md
 
 ### Requirements
-* each 'Todo' item will be stored as a JavaScript object with the following properties
-    * title
-    * description
-    * date added
-    * due date
-    * priority
-    * project ('Default' by default)
-    * overdue (boolean, default false, only true if due date is passed)
-* each 'Project' item will be stored as a JavaScript object with the following properties
-    * title
-    * description
-    * date added
-    * due date
-    * notes
-    * todos (the list of 'Todo' items in this 'Project')
-* 'Todo' functionality:
-    * edit (title, description, due date, priority, notes, 'Project')
-* 'Project' functionality:
-    * edit (title, description, due date, date added, todos)
-* overall functionality:
-    * create new 'Todo'
-    * create new 'Project'
-    * toggle 'complete' status of a 'Todo' or 'Project'
-    * toggle 'Todo' priority
-    * edits to 'Todo' and 'Project' properties (title, description, notes, project, todos)\
+* each 'Todo' item will be stored as a JavaScript object 
+* each 'Project' item will be stored as a JavaScript object 
 * UI views:
     * view all 'Projects'
     * view all 'Todos'
@@ -61,20 +36,83 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
 * package with webpack
 
 ### UI views
-* sidebar (on all pages)
-    * nav links to index, projects and todos views
-    * button for new todo, new project
-* index view
-    * card: total number of todos > click to view todos view
-    * card: total number of projects > click to view projects view
-    * card: total number of overdue todos > click to view overdues view
+* header & sidebar (on all pages)
+    * logo & app name
+    * nav links to Dashboard, Projects and Tasks views
+    * links for New task and New project
+* Dashboard view:
+    * card: total number of todos, number of overdue todos > click to view Tasks view
+    * card: total number of projects > click to view Projects view
+    * card: 4 most recent projects
+    * card: 4 most recent tasks
 * projects view
-    * card for each project with list of todos in the project > click to view that project view
+    * card for each project with list of todos in the project > click 'Expand' to view that project view
 * project view:
-    * edit task panel on edit button click
-    * list all todos in the project > click a todo to open the edit panel for that todo
+    * card with title, date created, description, list of todos,and buttons to:
+        * mark all todos complete
+        * edit project
+        * delete project
 * todos view
-    * list all todos and their properties with option to click on todo to expand the todo view with options to edit/delete the todo
+    * table list all todos and their properties with option to click on todo to expand the todo view with buttons to edit/delete the todo
+
+### Pseudocode
+
+* Todo Object
+    * title = 'string',
+    * created = Date now object,
+    * dueDate = Date object,
+    * project = Project object title,
+    * priority = 'urgent' or 'not urgent',
+    * overdue = false,
+    * description = 'string',
+    * complete = false,
+
+* Project Object
+    * title = 'string',
+    * created = Date now object,
+    * description = 'string',
+    * todos = [array of Todo objects],
+    * complete = false,
+
+* todoList Array
+    * array of Todo objects
+
+* projectList Array
+    * array of Project objects
+
+* When a user first opens the app, immediately generate a new Project object:
+    * defaultProject
+        * title = 'My First Project',
+        * created = Date.now() object,
+        * description = 'This is a project. You can add tasks, edit this project, or add a new project.',
+        * todos = [],
+
+* Actions:
+    * make new Project
+    * change Project title
+    * toggle Project complete
+    * change Project description
+    * add Todo to Project.todos
+    * remove Todo from Project.todos
+    * delete Project
+    * make new Todo
+    * change Todo title
+    * toggle Todo complete
+    * toggle Todo priority
+    * change Todo description
+    * change Todo dueDate
+    * change Todo project
+    * set Todo to overdue
+    * delete Todo
+    * display all Todos in todoList array
+    * display all Projects in projectList array
+    * display x most recent Todos in chronological order
+    * display x most recent Projects in chronological order
+    * display one Todo
+    * display one Project
+    * get number of Todos
+    * get number of Projects
+
 
 ### Colors
 Primary red: #ED533E
