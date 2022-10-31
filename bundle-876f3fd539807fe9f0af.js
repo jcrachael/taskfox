@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* GLOBALS */\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width:48%;\r\n    padding: 20px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img, #new-task-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.save {\r\n    color: #8bc34a;\r\n    margin-right: 40px;\r\n}\r\n\r\n.cancel {\r\n    color: #ED533E;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["/* GLOBALS */\r\n@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width:48%;\r\n    padding: 20px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img, #new-task-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.save {\r\n    color: #8bc34a;\r\n    margin-right: 40px;\r\n}\r\n\r\n.cancel {\r\n    color: #ED533E;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* GLOBALS */\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width:48%;\r\n    padding: 20px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list, .task-list-div {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title, .task-list-div-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n.task-list-div-title-container {\r\n    display: flex;\r\n}\r\n\r\n.task-list-div-title {\r\n    margin-right: 10px;\r\n    padding-right: 0;\r\n}\r\n\r\n.task-project-subtitle {\r\n    color: #9FA2B4;\r\n    font-size: 10pt;\r\n    margin-left: 0;\r\n}\r\n.checkbox-pad {\r\n    margin-right: 20px;\r\n}\r\n\r\nspan.normal {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #F0F1F7;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #9FA2B4;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.urgent {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #ED533E;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #fff;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.complete {\r\n    background-color: #8bc34a;\r\n    color: #fff\r\n}\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img, #new-task-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.save {\r\n    color: #8bc34a;\r\n    margin-right: 40px;\r\n}\r\n\r\n.cancel {\r\n    color: #ED533E;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["/* GLOBALS */\r\n@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width:48%;\r\n    padding: 20px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list, .task-list-div {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title, .task-list-div-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n.task-list-div-title-container {\r\n    display: flex;\r\n}\r\n\r\n.task-list-div-title {\r\n    margin-right: 10px;\r\n    padding-right: 0;\r\n}\r\n\r\n.task-project-subtitle {\r\n    color: #9FA2B4;\r\n    font-size: 10pt;\r\n    margin-left: 0;\r\n}\r\n.checkbox-pad {\r\n    margin-right: 20px;\r\n}\r\n\r\nspan.normal {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #F0F1F7;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #9FA2B4;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.urgent {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #ED533E;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #fff;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.complete {\r\n    background-color: #8bc34a;\r\n    color: #fff\r\n}\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img, #new-task-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.save {\r\n    color: #8bc34a;\r\n    margin-right: 40px;\r\n}\r\n\r\n.cancel {\r\n    color: #ED533E;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22543,11 +22543,21 @@ class Project {
         this.todos = [];
         this.complete = false;
     }
+
+    addTask(task) {
+        this.todos.push(task);
+        return this.todos;
+    }
+
+    getNumTodosInProject() {
+        return this.todos.length;
+    }
 }
 
 function createProject(title, description) {
     const newProject = new Project(title, description);
     projectsList.push(newProject);
+    return newProject;
 }
 
 
@@ -22560,6 +22570,77 @@ function displayProjects() {
 function getNumProjects() {
     return projectsList.length;
 }
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/Todo.js":
+/*!*********************!*\
+  !*** ./src/Todo.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Todo": () => (/* binding */ Todo),
+/* harmony export */   "createTodo": () => (/* binding */ createTodo),
+/* harmony export */   "displayTodos": () => (/* binding */ displayTodos),
+/* harmony export */   "getNumTodos": () => (/* binding */ getNumTodos),
+/* harmony export */   "todoList": () => (/* binding */ todoList)
+/* harmony export */ });
+const {format} = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+
+const todoList = [];
+
+class Todo {
+    constructor(title, description, dueDate, project, priority) {
+        this.title = title;
+        this.created = format(new Date(), 'dd.MM.yyyy');
+        this.dueDate = dueDate;
+        this.description = description;
+        this.project = project;
+        this.priority = priority;
+        this.complete = false;
+    }
+
+    toggleCompleteStatus() {
+        if (this.complete == false) {
+            this.complete = true;
+            return 
+        } else if (this.complete == true) {
+            this.complete = false;
+            return 
+        }
+    }
+}
+
+
+function createTodo(title, description, dueDate, project, priority) {
+    const newTodo = new Todo(title, description, dueDate, project, priority);
+    todoList.push(newTodo);
+    return newTodo;
+}
+
+
+function displayTodos() {
+    for (let i = 0; i < todoList.length; i++) {
+        return todoList[i]['title'];
+    }
+};
+
+function getNumTodos() {
+    return todoList.length;
+}
+
+
 
 
 
@@ -22583,6 +22664,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tasks */ "./src/tasks.js");
 /* harmony import */ var _setTasksNavActive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./setTasksNavActive */ "./src/setTasksNavActive.js");
 /* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Project */ "./src/Project.js");
+/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Todo */ "./src/Todo.js");
 
 
 
@@ -22590,6 +22672,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ 
 function dashboard() {
     
     // reset content
@@ -22629,8 +22712,7 @@ function dashboard() {
 
     const totalTasksCardNumber = document.createElement('p');
     totalTasksCardNumber.classList.add('totalCardNumber');
-    // TODO: function for getting total projects number called here
-    totalTasksCardNumber.innerText = '19';
+    totalTasksCardNumber.innerText = (0,_Todo__WEBPACK_IMPORTED_MODULE_6__.getNumTodos)();
     totalTasksCard.appendChild(totalTasksCardNumber);
 
     content.appendChild(totalTasksCard);
@@ -22647,7 +22729,7 @@ function dashboard() {
 
     const totalOverdueCardNumber = document.createElement('p');
     totalOverdueCardNumber.classList.add('totalCardNumber');
-    // TODO: function for getting total projects number called here
+    // TODO: function for getting total overdues number called here
     totalOverdueCardNumber.innerText = '2';
     totalOverdueCard.appendChild(totalOverdueCardNumber);
 
@@ -22686,8 +22768,6 @@ function dashboard() {
     recentProjectsCardSubtitle.classList.add('recentCardSubtitle');
     recentProjectsCardSubtitle.innerText = 'Most recent projects';
     recentProjectsCard.appendChild(recentProjectsCardSubtitle);
-
- 
 
     recentContainer.appendChild(recentProjectsCard);
 
@@ -22759,9 +22839,75 @@ function dashboard() {
         })
     }
 
+    // display tasks
+    for (let i = 0; i < _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList.length; i++) {
+        const todoListDiv = document.createElement('div');
+        todoListDiv.classList.add('task-list-div');
+
+        // task priority
+        if (_Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['priority'] == 'urgent') {
+            todoListDiv.classList.add('urgent');
+        } else {
+            todoListDiv.classList.add('normal');
+        }
+
+        // task title container
+        const todoListDivTitleContainer = document.createElement('span');
+        todoListDivTitleContainer.classList.add('task-list-div-title-container');
+        todoListDiv.appendChild(todoListDivTitleContainer);
+
+        const completeChecker = document.createElement('input');
+        completeChecker.classList.add('checkbox-pad');
+        completeChecker.setAttribute('id', _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['title'] + '-checkbox')
+        completeChecker.setAttribute('type', 'checkbox');
+        completeChecker.setAttribute('name', 'completed')
+        todoListDivTitleContainer.appendChild(completeChecker);
+
+        // task title
+        const todoListDivTitle = document.createElement('p');
+        todoListDivTitle.classList.add('task-list-div-title');
+        todoListDivTitle.innerText = _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['title'];
+        todoListDivTitleContainer.appendChild(todoListDivTitle);
+
+        // task project
+        const todoListDivProject = document.createElement('p');
+        todoListDivProject.classList.add('task-project-subtitle');
+        todoListDivProject.innerText = _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['project'];
+        todoListDivTitleContainer.appendChild(todoListDivProject);
+
+        // task urgency status
+        const todoUrgency = document.createElement('span');
+        todoUrgency.classList.add('task-urgency');
+        const thisTaskUrgency = _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['priority'];
+        todoUrgency.classList.add(thisTaskUrgency);
+        todoUrgency.innerText = thisTaskUrgency;
+   
+
+        todoListDiv.appendChild(todoUrgency);
+
+        recentTasksCard.appendChild(todoListDiv);
+
+        todoListDivTitle.addEventListener('click', function() {
+            console.log('Task list task clicked: ' + _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['title'])
+        })
+
+        completeChecker.addEventListener('click', function() {
+            _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i].toggleCompleteStatus();
 
 
+            if (_Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['complete']) {
+                todoUrgency.innerText = 'Complete';
+                todoUrgency.classList.add('complete');
+            } else if (!_Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['complete']) {
+                todoUrgency.classList.remove('complete');
+                todoUrgency.innerText = thisTaskUrgency;
+            }
+        })
+    
+
+    }
 };
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dashboard);
 
@@ -22918,11 +23064,11 @@ function homepage(){
         })
 
         // SAVE TASK BUTTON
-        const saveIcon = document.getElementById('save-project-icon');
+        const saveIcon = document.getElementById('save-task-icon');
         saveIcon.src = _assets_check_png__WEBPACK_IMPORTED_MODULE_4__;
 
         // save task onclick event
-        const saveTask = document.getElementById('save-project');
+        const saveTask = document.getElementById('save-task');
         saveTask.addEventListener('mouseover', function() {
             saveIcon.src = _assets_check_active_png__WEBPACK_IMPORTED_MODULE_5__;
         });
@@ -22936,11 +23082,11 @@ function homepage(){
         });
 
         // CANCEL PROJECT BUTTON
-        const cancelIcon = document.getElementById('cancel-project-icon');
+        const cancelIcon = document.getElementById('cancel-task-icon');
         cancelIcon.src = _assets_cancel_png__WEBPACK_IMPORTED_MODULE_6__;
 
         // cancel project onclick event
-        const cancelTask = document.getElementById('cancel-project');
+        const cancelTask = document.getElementById('cancel-task');
         cancelTask.addEventListener('mouseover', function() {
             cancelIcon.src = _assets_cancel_filled_png__WEBPACK_IMPORTED_MODULE_7__;
         });
@@ -22950,7 +23096,7 @@ function homepage(){
 
         cancelTask.addEventListener('click', function() {
             // cancel the new project
-            newProjectModal.classList.add('modal-hidden');
+            newTaskModal.classList.add('modal-hidden');
         });
     });
 
@@ -23360,20 +23506,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage */ "./src/homepage.js");
 /* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Project */ "./src/Project.js");
+/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Todo */ "./src/Todo.js");
+
+
 
 
 
 
 // ON APP OPENING:
+const {format} = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 
 // Generate a new defaultProject object
 const defaultProjectTitle = 'My First Project';
 const defaultProjectDescription = 'My first project description goes here.';
 const defaultProject = (0,_Project__WEBPACK_IMPORTED_MODULE_2__.createProject)(defaultProjectTitle, defaultProjectDescription);
 
+// Generate new defaultTodo object
+const defaultTodoTitle = 'My First Task';
+const defaultTodoPriority = 'normal'
+const defaultTodoDescription = 'My first task description!';
+const defaultTodoDueDate = format(new Date(2023, 12, 31), 'dd.MM.yyyy');
+const defaultTodoProject = defaultProject.title;
+
+const defaultTodo = (0,_Todo__WEBPACK_IMPORTED_MODULE_3__.createTodo)(defaultTodoTitle, defaultTodoDescription, defaultTodoDueDate, defaultTodoProject, defaultTodoPriority);
+
+const newTodoTitle = 'My second task';
+const newTodoDescription = 'Another task description goes here.';
+const newTodoPriority = 'urgent';
+const newTodoDueDate = format(new Date(2023, 1, 6), 'dd.MM.yyyy');
+const newTodoProject = defaultProject.title;
+const newTestTodo = (0,_Todo__WEBPACK_IMPORTED_MODULE_3__.createTodo)(newTodoTitle, newTodoDescription, newTodoDueDate, newTodoProject, newTodoPriority);
+
+defaultProject.addTask(defaultTodo);
+defaultProject.addTask(newTestTodo);
+
 // Build the default template
 (0,_homepage__WEBPACK_IMPORTED_MODULE_1__["default"])();
-
 
 
 
@@ -23381,4 +23549,4 @@ const defaultProject = (0,_Project__WEBPACK_IMPORTED_MODULE_2__.createProject)(d
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle-7213966affb22de048c5.js.map
+//# sourceMappingURL=bundle-876f3fd539807fe9f0af.js.map
