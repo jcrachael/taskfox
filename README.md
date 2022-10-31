@@ -12,16 +12,6 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
 
 ## Specifications
 
-### File structure
-* todo-list-app
-    * src
-        * template.html
-        * index.js
-        * style.css
-    * assets
-        * images, etc.
-    * README.md
-
 ### Requirements
 * each 'Todo' item will be stored as a JavaScript object 
 * each 'Project' item will be stored as a JavaScript object 
@@ -128,7 +118,7 @@ Urgent red: #E10000
 ### Credits
 Fox, idea icons made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/).
 
-Plus, delete, edit, check, minus icons made by [dmitri13](https://www.flaticon.com/authors/dmitri13) from [Flaticon](https://www.flaticon.com/).
+Plus, delete, edit, check, minus icons made by [dmitri13](https://www.flaticon.com/authors/dmitri13) from [Flaticon](https://www.flaticon.com/). Filled check icon made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [Flaticon](https://www.flaticon.com/).
 
 Dashboard icon by [Stockes Design](https://www.flaticon.com/free-icons/dashboard) on [Flaticon](https://www.flaticon.com/).
 

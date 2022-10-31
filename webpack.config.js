@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const { webpack } = require('webpack');
 
 module.exports = {
     // set the mode (production or development)
@@ -52,6 +53,6 @@ module.exports = {
             title: 'Taskfox: a productivity app',
             filename: 'index.html',
             template: 'src/template.html',
-        })
+        }),
     ],
 }

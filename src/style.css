@@ -9,8 +9,12 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: 1px #ED533E80 solid;
+}
+
 body {
-    background-color: #F6F2EF;
+    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );
 }
 
 #container {
@@ -25,6 +29,7 @@ h1 {
     font-weight: 400;
     font-size: 32pt;
     letter-spacing: 0.2px;
+    padding-bottom: 40px;
 }
 
 a {
@@ -137,6 +142,316 @@ main {
     align-items: center;
     align-content: center;
     margin-left: 40px;
+    cursor: pointer;
+}
+
+/* cards */
+#content {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px #DFE0EB solid;
+    border-radius: 10px;
+}
+
+#totalProjectsCard, #totalTasksCard, #totalOverdueCard {
+    grid-row: 1/2;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.totalCardTitle {
+    color: #9fa2b4;
+    font-size: 12pt;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding-bottom: 20px;
+}
+
+.totalCardNumber {
+    color: #333;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+#recentContainer {
+    grid-row: 2/3;
+    grid-column: 1/4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+#recentProjectsCard, #recentTasksCard {
+    width: 48.5%;
+    min-width:400px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+#recentProjectsCard {
+    margin-right: 40px;
+}
+
+.recentCardTitle {
+    font-size: 12pt;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.recentCardTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.recentCardTitleContainer a {
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+.recentCardTitleContainer a:hover {
+    text-decoration: underline;
+}
+
+.recentCardSubtitle {
+    font-size: 10pt;
+    color: #9FA2B4;
+    margin-bottom: 20px;
+}
+
+.project-card-list, .task-list-div {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11pt;
+    padding-bottom: 20px;
+    border-bottom: 1px #c8cbd8 solid;
+}
+
+.project-card-list-title, .task-list-div-title {
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.project-card-list-num {
+    color: #9FA2B4;
+}
+
+.task-list-div-title-container {
+  
+    display: grid;
+    grid-template-columns: 1rem auto auto;
+    gap: 0.5em;
+}
+
+.task-list-div-title {
+
+    padding-right: 0;
+}
+
+.task-project-subtitle {
+    color: #9FA2B4;
+    font-size: 10pt;
+    margin-left: 0;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: #8bc34a;
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid #DFE0EB;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #8bc34a;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(1px, 0.15em) solid #8bc34a;
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+
+span.normal {
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    background-color: #F0F1F7;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #9FA2B4;
+    text-align: center;
+    padding-top: 4px;
+}
+
+span.urgent {
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    background-color: #ED533E;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-top: 4px;
+}
+
+span.complete {
+    background-color: #8bc34a;
+    color: #fff
+}
+
+/* MODAL */
+
+.modal-hidden {
+    opacity: 0;
+    display: hidden;
+    visibility: hidden;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.1s ease-in;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-close {
+    color: #ED533E;
+    cursor: pointer;
+}
+
+.modal-dialog {
+    width: 450px;
+    background-color: white;
+    border: 1px #DFE0EB solid;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.modal-title {
+    font-size: 12pt;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding-bottom: 40px;
+}
+
+#new-project-form, #new-task-form {
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+
+#new-project-form label, #new-task-form label {
+    grid-column: 1/1;
+    color: #333;
+    font-size: 10pt;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {
+    grid-column: 2/2;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px #9FA2B470 solid;
+}
+
+#new-project-buttons, #new-task-buttons {
+    display: flex;
+    font-weight: bold;
+    justify-content: flex-start;
+    grid-column: 1/3;
+}
+
+#new-project-buttons img, #new-task-buttons img {
+    height: 20px;
+    padding-right: 10px;
+}
+
+.save {
+    color: #8bc34a;
+    margin-right: 40px;
+}
+
+.cancel {
+    color: #ED533E;
+}
+
+#save-project, #cancel-project, #save-task, #cancel-task {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radios > label {
+    margin-right: 20px;
+    font-weight: 100;
 }
 
 /* FOOTER */
