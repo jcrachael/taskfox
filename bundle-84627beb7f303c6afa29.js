@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* GLOBALS */\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width:48%;\r\n    padding: 20px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list, .task-list-div {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title, .task-list-div-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n.task-list-div-title-container {\r\n    display: flex;\r\n}\r\n\r\n.task-list-div-title {\r\n    margin-right: 10px;\r\n    padding-right: 0;\r\n}\r\n\r\n.task-project-subtitle {\r\n    color: #9FA2B4;\r\n    font-size: 10pt;\r\n    margin-left: 0;\r\n}\r\n.checkbox-pad {\r\n    margin-right: 20px;\r\n}\r\n\r\nspan.normal {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #F0F1F7;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #9FA2B4;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.urgent {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #ED533E;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #fff;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.complete {\r\n    background-color: #8bc34a;\r\n    color: #fff\r\n}\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img, #new-task-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.save {\r\n    color: #8bc34a;\r\n    margin-right: 40px;\r\n}\r\n\r\n.cancel {\r\n    color: #ED533E;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA,YAAY;;AAGZ;IACI,mDAAmD;IACnD,SAAS;IACT,UAAU;IACV,cAAc;IACd,sBAAsB;AAC1B;;AAEA;IACI,4BAA4B;AAChC;;AAEA;IACI,2HAA2H;AAC/H;;AAEA;IACI,aAAa;IACb,iCAAiC;IACjC,mCAAmC;IACnC,aAAa;AACjB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,eAAe;IACf,qBAAqB;IACrB,oBAAoB;AACxB;;AAEA;IACI,qBAAqB;IACrB,cAAc;AAClB;;AAEA,WAAW;;AAEX;IACI,kBAAkB;IAClB,eAAe;IACf,kBAAkB;IAClB,YAAY;AAChB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,iBAAiB;IACjB,eAAe;AACnB;;AAEA,YAAY;;AAEZ;IACI,kBAAkB;IAClB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,qBAAqB;AACzB;;AAEA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,2BAA2B;IAC3B,2BAA2B;IAC3B,iBAAiB;IACjB,UAAU;AACd;;AAEA;IACI,2BAA2B;IAC3B,2BAA2B;IAC3B,iBAAiB;IACjB,UAAU;AACd;;AAEA;IACI,kBAAkB;IAClB,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,cAAc;IACd,kBAAkB;;AAEtB;;;AAGA,SAAS;;AAET;IACI,gBAAgB;IAChB,aAAa;IACb,2BAA2B;IAC3B,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,2BAA2B;IAC3B,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,cAAc;IACd,gBAAgB;IAChB,eAAe;IACf,qBAAqB;IACrB,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,qBAAqB;IACrB,iBAAiB;IACjB,eAAe;AACnB;;AAEA,UAAU;AACV;IACI,aAAa;IACb,6BAA6B;IAC7B,qCAAqC;IACrC,SAAS;AACb;;AAEA;IACI,yBAAyB;IACzB,yBAAyB;IACzB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,kBAAkB;IAClB,iBAAiB;IACjB,oBAAoB;AACxB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,iBAAiB;IACjB,qBAAqB;IACrB,oBAAoB;AACxB;;AAEA;IACI,WAAW;IACX,eAAe;IACf,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,aAAa;IACb,8BAA8B;;AAElC;;AAEA;IACI,SAAS;IACT,aAAa;AACjB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AACzB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;IACnB,oBAAoB;AACxB;;AAEA;IACI,eAAe;IACf,eAAe;AACnB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,eAAe;IACf,cAAc;IACd,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,8BAA8B;IAC9B,mBAAmB;IACnB,eAAe;IACf,oBAAoB;IACpB,gCAAgC;AACpC;;AAEA;IACI,WAAW;IACX,iBAAiB;IACjB,eAAe;;AAEnB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;AACpB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,cAAc;AAClB;AACA;IACI,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,yBAAyB;IACzB,kBAAkB;IAClB,eAAe;IACf,yBAAyB;IACzB,iBAAiB;IACjB,cAAc;IACd,kBAAkB;IAClB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,yBAAyB;IACzB,kBAAkB;IAClB,eAAe;IACf,yBAAyB;IACzB,iBAAiB;IACjB,WAAW;IACX,kBAAkB;IAClB,gBAAgB;AACpB;;AAEA;IACI,yBAAyB;IACzB;AACJ;;AAEA,UAAU;;AAEV;IACI,UAAU;IACV,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,MAAM;IACN,SAAS;IACT,OAAO;IACP,QAAQ;IACR,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,iCAAiC;IACjC,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,8BAA8B;AAClC;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,uBAAuB;IACvB,yBAAyB;IACzB,mBAAmB;IACnB,aAAa;AACjB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,iBAAiB;IACjB,qBAAqB;IACrB,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,gCAAgC;;AAEpC;;AAEA;IACI,gBAAgB;IAChB,WAAW;IACX,eAAe;IACf,iBAAiB;IACjB,qBAAqB;AACzB;;AAEA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,2BAA2B;AAC/B;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,2BAA2B;IAC3B,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,kBAAkB;AACtB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,eAAe;AACnB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;AACpB;;AAEA,WAAW;;AAEX;IACI,eAAe;IACf,gBAAgB;IAChB,aAAa;IACb,kBAAkB;AACtB","sourcesContent":["/* GLOBALS */\r\n@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width:48%;\r\n    padding: 20px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list, .task-list-div {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title, .task-list-div-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n.task-list-div-title-container {\r\n    display: flex;\r\n}\r\n\r\n.task-list-div-title {\r\n    margin-right: 10px;\r\n    padding-right: 0;\r\n}\r\n\r\n.task-project-subtitle {\r\n    color: #9FA2B4;\r\n    font-size: 10pt;\r\n    margin-left: 0;\r\n}\r\n.checkbox-pad {\r\n    margin-right: 20px;\r\n}\r\n\r\nspan.normal {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #F0F1F7;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #9FA2B4;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.urgent {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #ED533E;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #fff;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.complete {\r\n    background-color: #8bc34a;\r\n    color: #fff\r\n}\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img, #new-task-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.save {\r\n    color: #8bc34a;\r\n    margin-right: 40px;\r\n}\r\n\r\n.cancel {\r\n    color: #ED533E;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* GLOBALS */\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n#totalOverdueCard > * {\r\n    color: #ED533E;\r\n}\r\n\r\n#totalOverdueCard {\r\n    border: 1px #ED533E90 solid;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width: 48.5%;\r\n    min-width: 300px;\r\n    padding: 20px;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list, .task-list-div {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title, .task-list-div-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n.task-list-div-title-container {\r\n    display: grid;\r\n    grid-template-columns: 1rem auto auto;\r\n    gap: 0.5em;\r\n}\r\n\r\n.task-list-div-title {\r\n    padding-right: 0;\r\n    margin-left: 10px;\r\n}\r\n\r\n.task-project-subtitle {\r\n    color: #9FA2B4;\r\n    font-size: 10pt;\r\n    margin-left: 0;\r\n}\r\n\r\ninput[type=\"checkbox\"] {\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    background-color: #fff;\r\n    /* Not removed via appearance */\r\n    margin: 0;\r\n    font: inherit;\r\n    color: #8bc34a;\r\n    width: 1.5em;\r\n    height: 1.5em;\r\n    border: 1px solid #DFE0EB;\r\n    border-radius: 1em;\r\n    transform: translateY(-0.15em);\r\n    display: grid;\r\n    place-content: center;\r\n}\r\n\r\ninput[type=\"checkbox\"]::before {\r\n    content: '';\r\n    width: 0.65em;\r\n    height: 0.65em;\r\n    transform: scale(0);\r\n    transition: 120ms transform ease-in-out;\r\n    box-shadow: inset 1em 1em #8bc34a;\r\n    transform-origin: bottom left;\r\n    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);\r\n}\r\n\r\ninput[type=\"checkbox\"]:checked::before {\r\n    transform: scale(1);\r\n}\r\n\r\ninput[type=\"checkbox\"]:focus {\r\n    outline: max(1px, 0.15em) solid #8bc34a;\r\n}\r\n\r\ninput[type=\"checkbox\"]:focus {\r\n    outline: max(2px, 0.15em) solid currentColor;\r\n    outline-offset: max(2px, 0.15em);\r\n  }\r\n\r\nspan.normal {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #F0F1F7;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #9FA2B4;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.urgent {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #ED533E;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #fff;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.complete {\r\n    background-color: #8bc34a;\r\n    color: #fff\r\n}\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\ninput[type=submit] {\r\n    background-color: #fff;\r\n    color: #8bc34a;\r\n    border: 1px #8bc34a solid !important;\r\n    cursor: pointer;\r\n}\r\n\r\ninput[type=submit]:hover {\r\n    background-color: #8bc34a;\r\n    color: #fff;\r\n}\r\n\r\ninput[type=reset] {\r\n    background-color: #fff;\r\n    color: #ED533E;\r\n    border: 1px #ED533E solid !important;\r\n    cursor: pointer;\r\n}\r\n\r\ninput[type=reset]:hover {\r\n    background-color: #ED533E;\r\n    color: #fff;\r\n}\r\n\r\n#submit-task-btn, #submit-project-btn, #cancel-task-btn, #cancel-project-btn {\r\n    width: 80%;\r\n    font-weight: bold;\r\n    margin: 20px auto;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    \r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n\r\n\r\n/* TASKS TAB */\r\n\r\n#tasksTab {\r\n    display: hidden;\r\n}\r\n\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["/* GLOBALS */\r\n@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');\r\n\r\n* {\r\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    color: #333333;\r\n    box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n    outline: 1px #ED533E80 solid;\r\n}\r\n\r\nbody {\r\n    background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );\r\n}\r\n\r\n#container {\r\n    display: grid;\r\n    grid-template-columns: 250px auto;\r\n    grid-template-rows: 100px auto auto;\r\n    height: 100vh;\r\n}\r\n\r\nh1 {\r\n    color: #333333;\r\n    font-weight: 400;\r\n    font-size: 32pt;\r\n    letter-spacing: 0.2px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n    color: #ED533E;\r\n}\r\n\r\n/* HEADER */\r\n\r\nheader {\r\n    grid-column: 1 / 3;\r\n    grid-row: 1 / 2;\r\n    text-align: center;\r\n    height:120px;\r\n}\r\n\r\n#logo {\r\n    width: 300px;\r\n}\r\n\r\nh3 {\r\n    color: #ED533E;\r\n    font-weight: 400;\r\n    margin-top: -40px;\r\n    font-size: 10pt;\r\n}\r\n\r\n/* SIDEBAR */\r\n\r\naside {\r\n    grid-column: 1 / 2;\r\n    grid-row: 2/ 3;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    height: 50px;\r\n    display: flex;\r\n    align-items: center;\r\n    cursor: pointer;\r\n    opacity: 0.5;\r\n}\r\n\r\n.nav-link:hover {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-active {\r\n    border-left: 3px #333 solid;\r\n    background-color: #00000013;\r\n    font-weight: bold;\r\n    opacity: 1;\r\n}\r\n\r\n.nav-link a {\r\n    padding-left: 10px;\r\n    color: #333;\r\n}\r\n\r\n.icon-nav {\r\n    height: 20px;\r\n    font-size: 8pt;\r\n    padding-left: 30px;\r\n    \r\n}\r\n\r\n\r\n/* MAIN */\r\n\r\nmain {\r\n    grid-column: 2/3;\r\n    grid-row: 2/4;\r\n    height: calc(100vh - 160px);\r\n    margin-right: 40px;\r\n    padding-top: 40px;\r\n    padding-left: 30px;\r\n}\r\n\r\n#new-links {\r\n    flex-direction: row-reverse;\r\n    display: flex;\r\n}\r\n\r\n#new-links a {\r\n    height: 20px;\r\n    color: #ED533E;\r\n    font-weight: 600;\r\n    font-size: 12pt;\r\n    text-decoration: none;\r\n    padding-right: 10px;\r\n}\r\n\r\n.icon-20 {\r\n    height: 20px;\r\n}\r\n\r\n#new-links img {\r\n    cursor: pointer;\r\n}\r\n\r\n#new-project-link, #new-task-link {\r\n    display: flex;\r\n    align-items: center;\r\n    align-content: center;\r\n    margin-left: 40px;\r\n    cursor: pointer;\r\n}\r\n\r\n/* cards */\r\n#content {\r\n    display: grid;\r\n    grid-template-rows: auto auto;\r\n    grid-template-columns: auto auto auto;\r\n    gap: 40px;\r\n}\r\n\r\n.card {\r\n    background-color: #ffffff;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n}\r\n\r\n#totalProjectsCard, #totalTasksCard, #totalOverdueCard {\r\n    grid-row: 1/2;\r\n    text-align: center;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n#totalOverdueCard > * {\r\n    color: #ED533E;\r\n}\r\n\r\n#totalOverdueCard {\r\n    border: 1px #ED533E90 solid;\r\n}\r\n\r\n.totalCardTitle {\r\n    color: #9fa2b4;\r\n    font-size: 12pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.totalCardNumber {\r\n    color: #333;\r\n    font-size: 24pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#recentContainer {\r\n    grid-row: 2/3;\r\n    grid-column: 1/4;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n#recentProjectsCard, #recentTasksCard {\r\n    width: 48.5%;\r\n    min-width: 300px;\r\n    padding: 20px;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.recentCardTitle {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.recentCardTitleContainer {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.recentCardTitleContainer a {\r\n    font-size: 10pt;\r\n    cursor: pointer;\r\n}\r\n\r\n.recentCardTitleContainer a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.recentCardSubtitle {\r\n    font-size: 10pt;\r\n    color: #9FA2B4;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.project-card-list, .task-list-div {\r\n    display: flex;\r\n    padding-top: 20px;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    font-size: 11pt;\r\n    padding-bottom: 20px;\r\n    border-bottom: 1px #c8cbd8 solid;\r\n}\r\n\r\n.project-card-list-title, .task-list-div-title {\r\n    color: #333;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n}\r\n\r\n.project-card-list-num {\r\n    color: #9FA2B4;\r\n}\r\n\r\n.task-list-div-title-container {\r\n    display: grid;\r\n    grid-template-columns: 1rem auto auto;\r\n    gap: 0.5em;\r\n}\r\n\r\n.task-list-div-title {\r\n    padding-right: 0;\r\n    margin-left: 10px;\r\n}\r\n\r\n.task-project-subtitle {\r\n    color: #9FA2B4;\r\n    font-size: 10pt;\r\n    margin-left: 0;\r\n}\r\n\r\ninput[type=\"checkbox\"] {\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    background-color: #fff;\r\n    /* Not removed via appearance */\r\n    margin: 0;\r\n    font: inherit;\r\n    color: #8bc34a;\r\n    width: 1.5em;\r\n    height: 1.5em;\r\n    border: 1px solid #DFE0EB;\r\n    border-radius: 1em;\r\n    transform: translateY(-0.15em);\r\n    display: grid;\r\n    place-content: center;\r\n}\r\n\r\ninput[type=\"checkbox\"]::before {\r\n    content: '';\r\n    width: 0.65em;\r\n    height: 0.65em;\r\n    transform: scale(0);\r\n    transition: 120ms transform ease-in-out;\r\n    box-shadow: inset 1em 1em #8bc34a;\r\n    transform-origin: bottom left;\r\n    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);\r\n}\r\n\r\ninput[type=\"checkbox\"]:checked::before {\r\n    transform: scale(1);\r\n}\r\n\r\ninput[type=\"checkbox\"]:focus {\r\n    outline: max(1px, 0.15em) solid #8bc34a;\r\n}\r\n\r\ninput[type=\"checkbox\"]:focus {\r\n    outline: max(2px, 0.15em) solid currentColor;\r\n    outline-offset: max(2px, 0.15em);\r\n  }\r\n\r\nspan.normal {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #F0F1F7;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #9FA2B4;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.urgent {\r\n    width: 100px;\r\n    min-width: 100px;\r\n    height: 25px;\r\n    background-color: #ED533E;\r\n    border-radius: 5px;\r\n    font-size: 10pt;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #fff;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n}\r\n\r\nspan.complete {\r\n    background-color: #8bc34a;\r\n    color: #fff\r\n}\r\n\r\n/* MODAL */\r\n\r\n.modal-hidden {\r\n    opacity: 0;\r\n    display: hidden;\r\n    visibility: hidden;\r\n}\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 1rem;\r\n    background-color: rgba(0,0,0,0.5);\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\n.modal-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.modal-close {\r\n    color: #ED533E;\r\n    cursor: pointer;\r\n}\r\n\r\n.modal-dialog {\r\n    width: 450px;\r\n    background-color: white;\r\n    border: 1px #DFE0EB solid;\r\n    border-radius: 10px;\r\n    padding: 30px;\r\n}\r\n\r\n.modal-title {\r\n    font-size: 12pt;\r\n    color: #333;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n#new-project-form, #new-task-form {\r\n    display: grid;\r\n    grid-template-columns: auto auto;\r\n    \r\n}\r\n\r\n#new-project-form label, #new-task-form label {\r\n    grid-column: 1/1;\r\n    color: #333;\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n#new-project-form input, #new-project-form textarea, #new-task-form input, #new-task-form textarea {\r\n    grid-column: 2/2;\r\n    padding: 10px 5px;\r\n    margin-bottom: 20px;\r\n    border-radius: 5px;\r\n    border: 1px #9FA2B470 solid;\r\n}\r\n\r\n#new-project-buttons, #new-task-buttons {\r\n    display: flex;\r\n    font-weight: bold;\r\n    justify-content: flex-start;\r\n    grid-column: 1/3;\r\n}\r\n\r\n#new-project-buttons img {\r\n    height: 20px;\r\n    padding-right: 10px;\r\n}\r\n\r\ninput[type=submit] {\r\n    background-color: #fff;\r\n    color: #8bc34a;\r\n    border: 1px #8bc34a solid !important;\r\n    cursor: pointer;\r\n}\r\n\r\ninput[type=submit]:hover {\r\n    background-color: #8bc34a;\r\n    color: #fff;\r\n}\r\n\r\ninput[type=reset] {\r\n    background-color: #fff;\r\n    color: #ED533E;\r\n    border: 1px #ED533E solid !important;\r\n    cursor: pointer;\r\n}\r\n\r\ninput[type=reset]:hover {\r\n    background-color: #ED533E;\r\n    color: #fff;\r\n}\r\n\r\n#submit-task-btn, #submit-project-btn, #cancel-task-btn, #cancel-project-btn {\r\n    width: 80%;\r\n    font-weight: bold;\r\n    margin: 20px auto;\r\n}\r\n\r\n#save-project, #cancel-project, #save-task, #cancel-task {\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    \r\n}\r\n\r\nselect {\r\n    margin-bottom: 20px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    margin-right: 10px;\r\n}\r\n\r\n.radios > label {\r\n    margin-right: 20px;\r\n    font-weight: 100;\r\n}\r\n\r\n\r\n\r\n/* TASKS TAB */\r\n\r\n#tasksTab {\r\n    display: hidden;\r\n}\r\n\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    font-size: 10pt;\r\n    grid-column: 1/3;\r\n    grid-row: 5/5;\r\n    text-align: center;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22517,6 +22517,563 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/DisplayController.js":
+/*!**********************************!*\
+  !*** ./src/DisplayController.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DisplayController": () => (/* binding */ DisplayController)
+/* harmony export */ });
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _assets_logo_red_512px_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo-red-512px.svg */ "./src/assets/logo-red-512px.svg");
+/* harmony import */ var _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/plus.png */ "./src/assets/plus.png");
+/* harmony import */ var _assets_plus_filled_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/plus-filled.png */ "./src/assets/plus-filled.png");
+/* harmony import */ var _assets_dashboards_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/dashboards.png */ "./src/assets/dashboards.png");
+/* harmony import */ var _assets_task_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/task.png */ "./src/assets/task.png");
+/* harmony import */ var _assets_idea_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/idea.png */ "./src/assets/idea.png");
+/* harmony import */ var _assets_check_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/check.png */ "./src/assets/check.png");
+/* harmony import */ var _assets_check_active_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/check-active.png */ "./src/assets/check-active.png");
+/* harmony import */ var _assets_cancel_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/cancel.png */ "./src/assets/cancel.png");
+/* harmony import */ var _assets_cancel_filled_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/cancel-filled.png */ "./src/assets/cancel-filled.png");
+/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Todo */ "./src/Todo.js");
+/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Project */ "./src/Project.js");
+// This is the DisplayController object that stores the UI functions.
+
+// CSS and image imports
+
+
+
+
+
+
+
+
+
+
+
+
+// JS module imports
+
+
+
+
+
+
+
+class DisplayController {
+    constructor(){};
+
+    // Show tasks tab
+    static showTasksTab() {
+        // reset content
+        const content = document.getElementById('content');
+        content.innerHTML = '';
+                
+        // add header
+        const header = document.getElementById('header');
+        header.innerText = 'Tasks';
+
+        // display card
+        //const card = document.createElement('div');
+        //card.classList.add('card');
+        //card.setAttribute('id', 'tasks-tab-card');
+        //content.appendChild(card);
+ 
+    };
+
+    static showProjectsTab() {
+        // reset content
+        const content = document.getElementById('content');
+        content.innerHTML = '';
+        // add header
+        const header = document.getElementById('header');
+        header.innerText = 'Projects';
+    };   
+
+    // Show new task modal
+    static showNewTaskModal() {
+        const newTaskModal = document.getElementById('new-task-modal');
+        newTaskModal.classList.remove('modal-hidden');
+        // set Cancel button event listener
+        const cancelButton = document.getElementById('cancel-task-btn');
+        cancelButton.addEventListener('click', function() {
+            newTaskModal.classList.add('modal-hidden');
+        })
+        // populate select options
+        const selections = document.getElementById('project-select');
+        selections.innerHTML = '';
+        for (let i in _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList) {
+            let thisProject = _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList[i]['title'];
+            let optionEl = document.createElement('option');
+            optionEl.setAttribute('value', thisProject);
+            optionEl.innerText = thisProject;
+            selections.appendChild(optionEl);
+        }
+
+        // SAVE TASK BUTTON
+        // save task onclick event
+        const saveTask = document.getElementById('submit-task-btn');
+        const form = document.getElementById('new-task-form');
+
+        saveTask.addEventListener('click', function(e) {
+            // Prevent default event
+            e.preventDefault();
+            // check validity
+            let isValid = form.reportValidity();
+
+            // if form is valid, save the new task
+            if (isValid) {
+                let taskInfo = {};
+                let title = document.getElementById('new-task-title').value;
+                let dueDate = document.getElementById('new-task-due-date').value;
+                let description = document.getElementById('new-task-description').value;
+                let projectTitle;
+                let priority;
+                let urgentRadio = document.getElementById('urgent');
+                let normalRadio = document.getElementById('noturgent');
+                if (urgentRadio.checked) {
+                    priority = 'urgent';
+                } else if (normalRadio.checked) {
+                    priority = 'normal';
+                };
+                let projectSelect = document.getElementById('project-select');
+                let projectOptions = projectSelect.children;
+                for (let i = 0; i < projectOptions.length; i++) {
+                    if (projectOptions[i].selected) {
+                        projectTitle = projectOptions[i].value
+                    }
+                };
+                taskInfo.title = title;
+                taskInfo.dueDate = dueDate;
+                taskInfo.description = description;
+                taskInfo.projectTitle = projectTitle;
+                taskInfo.priority = priority;
+                let newTask = (0,_Todo__WEBPACK_IMPORTED_MODULE_11__.createTodo)(taskInfo.title, taskInfo.description, taskInfo.dueDate, taskInfo.projectTitle, taskInfo.priority);
+                // add to the right project list
+                for (let i = 0; i < _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList.length; i++) {
+                    if (_Project__WEBPACK_IMPORTED_MODULE_12__.projectsList[i]['title'] == taskInfo.projectTitle) {
+                        _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList[i].addTask(newTask);
+                    }
+                };
+                // reset form and refresh dashboard
+                form.reset();
+                DisplayController.dashboard();
+                newTaskModal.classList.add('modal-hidden');
+            };
+        });
+    };
+
+    static showNewProjectModal() {
+        const newProjectModal = document.getElementById('new-project-modal');
+        newProjectModal.classList.remove('modal-hidden');
+        const cancelButton = document.getElementById('cancel-project-btn');
+        cancelButton.addEventListener('click', function() {
+            newProjectModal.classList.add('modal-hidden');
+        })
+        const form = document.getElementById('new-project-form');
+        // SAVE PROJECT BUTTON
+        const saveProject = document.getElementById('submit-project-btn');
+        // save project onclick event
+        saveProject.addEventListener('click', function(e) {
+            // prevent default event and check validity
+            e.preventDefault();
+            let isValid = form.reportValidity();
+            // If the form is valid, save the project as a new project
+            if (isValid) {
+                // Save the project
+                let projectInfo = {};
+                let title = document.getElementById('new-project-title').value;
+                let dueDate = document.getElementById('new-project-due-date').value;
+                let description = document.getElementById('new-project-description').value;
+                projectInfo.title = title;
+                projectInfo.dueDate = dueDate;
+                projectInfo.description = description;
+                let newProject = (0,_Project__WEBPACK_IMPORTED_MODULE_12__.createProject)(projectInfo.title, projectInfo.dueDate, projectInfo.description);
+                // reset form and refresh dashboard
+                form.reset();
+                DisplayController.dashboard();
+                newProjectModal.classList.add('modal-hidden');
+            };
+        });
+    };
+
+
+    // Display tasks to dashboard
+    static displayTaskstoDash() {
+        let oldlist = document.querySelectorAll('.task-list-div');
+        oldlist.forEach(item => { item.remove()});
+
+        // display tasks
+        for (let i = 0; i < _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList.length; i++) {
+            const todoListDiv = document.createElement('div');
+            todoListDiv.classList.add('task-list-div');
+
+            // task priority
+            if (_Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['priority'] == 'urgent') {
+                todoListDiv.classList.add('urgent');
+            } else {
+                todoListDiv.classList.add('normal');
+            }
+
+            // task title container
+            const todoListDivTitleContainer = document.createElement('span');
+            todoListDivTitleContainer.classList.add('task-list-div-title-container');
+            todoListDiv.appendChild(todoListDivTitleContainer);
+
+            const completeChecker = document.createElement('input');
+            completeChecker.classList.add('checkbox-pad');
+            completeChecker.setAttribute('id', _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['title'] + '-checkbox')
+            completeChecker.setAttribute('type', 'checkbox');
+            completeChecker.setAttribute('name', 'completed')
+            todoListDivTitleContainer.appendChild(completeChecker);
+
+            // task title
+            const todoListDivTitle = document.createElement('p');
+            todoListDivTitle.classList.add('task-list-div-title');
+            todoListDivTitle.innerText = _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['title'];
+            todoListDivTitleContainer.appendChild(todoListDivTitle);
+
+            // task project
+            const todoListDivProject = document.createElement('p');
+            todoListDivProject.classList.add('task-project-subtitle');
+            todoListDivProject.innerText = _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['project'];
+            todoListDivTitleContainer.appendChild(todoListDivProject);
+
+            // task urgency status
+            const todoUrgency = document.createElement('span');
+            todoUrgency.classList.add('task-urgency');
+            const thisTaskUrgency = _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['priority'];
+            todoUrgency.classList.add(thisTaskUrgency);
+            todoUrgency.innerText = thisTaskUrgency;
+    
+            todoListDiv.appendChild(todoUrgency);
+
+            recentTasksCard.appendChild(todoListDiv);
+
+            todoListDivTitle.addEventListener('click', function() {
+                console.log('Task list task clicked: ' + _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['title'])
+            })
+
+            completeChecker.addEventListener('click', function() {
+                _Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i].toggleCompleteStatus();
+                if (_Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['complete']) {
+                    todoUrgency.innerText = 'Complete';
+                    todoUrgency.classList.add('complete');
+                } else if (!_Todo__WEBPACK_IMPORTED_MODULE_11__.todoList[i]['complete']) {
+                    todoUrgency.classList.remove('complete');
+                    todoUrgency.innerText = thisTaskUrgency;
+                };
+            });
+        };
+    };
+
+    // Set nav links to active
+    static setProjectsNavActive() {
+        const dashLink = document.getElementById('nav-dash');
+        const projectsLink = document.getElementById('nav-projects');
+        const tasksLink = document.getElementById('nav-tasks');
+        // add nav-active class
+        if (!projectsLink.classList.contains('nav-active')) {
+            projectsLink.classList.add('nav-active');
+         };
+        
+        // remove 'nav-active' from dashboardLink
+        if (dashLink.classList.contains('nav-active')) {
+            dashLink.classList.remove('nav-active');
+        };
+        
+        // remove 'nav-active' from tasksLink
+        if (tasksLink.classList.contains('nav-active')) {
+            tasksLink.classList.remove('nav-active');
+        };
+    };
+
+    static setDashboardNavActive() {
+        const dashLink = document.getElementById('nav-dash');
+        const projectsLink = document.getElementById('nav-projects');
+        const tasksLink = document.getElementById('nav-tasks');
+            // add nav-active class
+            if (!dashLink.classList.contains('nav-active')) {
+                dashLink.classList.add('nav-active');
+            };
+    
+            // remove 'nav-active' from projectsLink
+            if (projectsLink.classList.contains('nav-active')) {
+                projectsLink.classList.remove('nav-active');
+            };
+    
+            // remove 'nav-active' from tasksLink
+            if (tasksLink.classList.contains('nav-active')) {
+                tasksLink.classList.remove('nav-active');
+            };
+    };
+
+    static setTasksNavActive() {
+        const dashLink = document.getElementById('nav-dash');
+        const projectsLink = document.getElementById('nav-projects');
+        const tasksLink = document.getElementById('nav-tasks');
+            // add nav-active class
+            if (!tasksLink.classList.contains('nav-active')) {
+                tasksLink.classList.add('nav-active');
+            };
+    
+            // remove 'nav-active' from projectsLink
+            if (projectsLink.classList.contains('nav-active')) {
+                projectsLink.classList.remove('nav-active');
+            };
+    
+            // remove 'nav-active' from dashLink
+            if (dashLink.classList.contains('nav-active')) {
+                dashLink.classList.remove('nav-active');
+            };
+    };
+
+    // Display projects to the dashboard
+    static displayProjectsToDash() {
+        const recentProjectsCard = document.getElementById('recentProjectsCard');
+        // display projects
+        let oldlist = document.querySelectorAll('.project-card-list');
+        oldlist.forEach(item => { item.remove()});
+        for (let i = 0; i < _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList.length; i++) {
+            const projectListDiv = document.createElement('div');
+            projectListDiv.classList.add('project-card-list');
+            const projectListDivTitle = document.createElement('p');
+            projectListDivTitle.classList.add('project-card-list-title');
+            projectListDivTitle.innerText = _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList[i]['title'];
+            projectListDiv.appendChild(projectListDivTitle);
+            const projectListDivNum = document.createElement('p');
+            projectListDivNum.classList.add('project-card-list-num');
+            projectListDivNum.innerText = _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList[i]['todos'].length + ' tasks';
+            projectListDiv.appendChild(projectListDivNum);
+            recentProjectsCard.appendChild(projectListDiv);
+            // event listener to open this project modal
+            projectListDiv.addEventListener('click', function() {
+                //display this project
+                // TODO: FINISH THIS
+                console.log('Project list project clicked: ' + _Project__WEBPACK_IMPORTED_MODULE_12__.projectsList[i]['title']);
+            });
+        };
+    };
+    
+    // Display the dashboard
+    static dashboard() {
+        // reset content
+        const content = document.getElementById('content');
+        content.innerHTML = '';
+
+        // add header
+        const header = document.getElementById('header');
+        header.innerText = 'Dashboard';
+
+        // total projects card
+        const totalProjectsCard = document.createElement('div');
+        totalProjectsCard.classList.add('card');
+        totalProjectsCard.setAttribute('id', 'totalProjectsCard');
+        
+        const totalProjectsCardTitle = document.createElement('p');
+        totalProjectsCardTitle.classList.add('totalCardTitle');
+        totalProjectsCardTitle.innerText = 'Projects';
+        totalProjectsCard.appendChild(totalProjectsCardTitle);
+
+        const totalProjectsCardNumber = document.createElement('p');
+        totalProjectsCardNumber.classList.add('totalCardNumber');
+        totalProjectsCardNumber.innerText = (0,_Project__WEBPACK_IMPORTED_MODULE_12__.getNumProjects)();
+        totalProjectsCard.appendChild(totalProjectsCardNumber);
+
+        content.appendChild(totalProjectsCard);
+
+        // total tasks card
+        const totalTasksCard = document.createElement('div');
+        totalTasksCard.classList.add('card');
+        totalTasksCard.setAttribute('id', 'totalTasksCard');
+        
+        const totalTasksCardTitle = document.createElement('p');
+        totalTasksCardTitle.classList.add('totalCardTitle');
+        totalTasksCardTitle.innerText = 'Tasks';
+        totalTasksCard.appendChild(totalTasksCardTitle);
+
+        const totalTasksCardNumber = document.createElement('p');
+        totalTasksCardNumber.classList.add('totalCardNumber');
+        totalTasksCardNumber.innerText = (0,_Todo__WEBPACK_IMPORTED_MODULE_11__.getNumTodos)();
+        totalTasksCard.appendChild(totalTasksCardNumber);
+
+        content.appendChild(totalTasksCard);
+
+        // total overdue tasks card
+        const totalOverdueCard = document.createElement('div');
+        totalOverdueCard.classList.add('card');
+        totalOverdueCard.setAttribute('id', 'totalOverdueCard');
+        
+        const totalOverdueCardTitle = document.createElement('p');
+        totalOverdueCardTitle.classList.add('totalCardTitle');
+        totalOverdueCardTitle.innerText = 'Overdue';
+        totalOverdueCard.appendChild(totalOverdueCardTitle);
+
+        const totalOverdueCardNumber = document.createElement('p');
+        totalOverdueCardNumber.classList.add('totalCardNumber');
+        // TODO: function for getting total overdues number called here
+        totalOverdueCardNumber.innerText = '2';
+        totalOverdueCard.appendChild(totalOverdueCardNumber);
+
+        content.appendChild(totalOverdueCard);
+
+        // container for recent cards
+        const recentContainer = document.createElement('div');
+        recentContainer.setAttribute('id', 'recentContainer');
+        content.appendChild(recentContainer);
+
+        // Recent projects card
+        const recentProjectsCard = document.createElement('div');
+        recentProjectsCard.classList.add('card');
+        recentProjectsCard.setAttribute('id', 'recentProjectsCard');
+
+        // Recent projects card title container
+        const recentProjectsCardTitleContainer = document.createElement('div');
+        recentProjectsCardTitleContainer.classList.add('recentCardTitleContainer');
+        recentProjectsCard.appendChild(recentProjectsCardTitleContainer);
+
+        // Recent projects card title
+        const recentProjectsCardTitle = document.createElement('p');
+        recentProjectsCardTitle.classList.add('recentCardTitle');
+        recentProjectsCardTitle.setAttribute('id', 'recentProjectsTitle');
+        recentProjectsCardTitle.innerText = 'Projects';
+        recentProjectsCardTitleContainer.appendChild(recentProjectsCardTitle);
+        
+        // Recent projects card link
+        const viewAllProjectsLink = document.createElement('a');
+        viewAllProjectsLink.innerText = 'View all projects';
+        viewAllProjectsLink.setAttribute('id', 'viewAllProjectsLink');
+        recentProjectsCardTitleContainer.appendChild(viewAllProjectsLink);
+        
+        // Recent projects card subtitle
+        const recentProjectsCardSubtitle = document.createElement('p');
+        recentProjectsCardSubtitle.classList.add('recentCardSubtitle');
+        recentProjectsCardSubtitle.innerText = 'Most recent projects';
+        recentProjectsCard.appendChild(recentProjectsCardSubtitle);
+
+        recentContainer.appendChild(recentProjectsCard);
+
+        // Recent tasks card
+        const recentTasksCard = document.createElement('div');
+        recentTasksCard.classList.add('card');
+        recentTasksCard.setAttribute('id', 'recentTasksCard');
+        
+        // title container
+        const recentTasksCardTitleContainer = document.createElement('div');
+        recentTasksCardTitleContainer.classList.add('recentCardTitleContainer');
+        recentTasksCard.appendChild(recentTasksCardTitleContainer);
+        
+        // title
+        const recentTasksCardTitle = document.createElement('p');
+        recentTasksCardTitle.classList.add('recentCardTitle');
+        recentTasksCardTitle.setAttribute('id', 'recentProjectsTitle');
+        recentTasksCardTitle.innerText = 'Tasks';
+        recentTasksCardTitleContainer.appendChild(recentTasksCardTitle);
+
+        // link
+        const viewAllTasksLink = document.createElement('a');
+        viewAllTasksLink.setAttribute('id', 'viewAllTasksLink');
+        viewAllTasksLink.innerText = 'View all tasks';
+        recentTasksCardTitleContainer.appendChild(viewAllTasksLink);
+
+        // subtitle
+        const recentTasksCardSubtitle = document.createElement('p');
+        recentTasksCardSubtitle.classList.add('recentCardSubtitle');
+        recentTasksCardSubtitle.innerText = 'Most recent tasks';
+        recentTasksCard.appendChild(recentTasksCardSubtitle);
+
+        recentContainer.appendChild(recentTasksCard);
+
+        // event listeners for card links
+        viewAllProjectsLink.addEventListener('click', function() {
+            DisplayController.showProjectsTab();
+            DisplayController.setProjectsNavActive();
+        });
+
+        viewAllTasksLink.addEventListener('click', function() {
+            DisplayController.showTasksTab();
+            DisplayController.setTasksNavActive();
+
+        });
+
+        // display projects
+        DisplayController.displayProjectsToDash();
+        DisplayController.displayTaskstoDash();
+    };
+
+
+    // Generate the homepage
+    homepage() {
+        // header logo
+        const logo = document.getElementById('logo');
+        logo.src = _assets_logo_red_512px_svg__WEBPACK_IMPORTED_MODULE_1__;
+    
+            // new task / new project buttons
+            const newProjectIcon = document.getElementById('new-project-icon');
+            newProjectIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
+            const newProjectLink = document.getElementById('new-project-link');
+            newProjectLink.addEventListener('mouseover', function() {
+                newProjectIcon.src = _assets_plus_filled_png__WEBPACK_IMPORTED_MODULE_3__;
+            });
+            newProjectLink.addEventListener('mouseleave', function() {
+                newProjectIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
+            });
+            const newTaskIcon = document.getElementById('new-task-icon');
+            newTaskIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
+            const newTaskLink = document.getElementById('new-task-link');
+            newTaskLink.addEventListener('mouseover', function() {
+                newTaskIcon.src = _assets_plus_filled_png__WEBPACK_IMPORTED_MODULE_3__;
+            });
+            newTaskLink.addEventListener('mouseleave', function() {
+                newTaskIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
+            });
+    
+            // MODAL
+            // onclick event listeners for new links
+            newProjectLink.addEventListener('click', DisplayController.showNewProjectModal);
+            // onclick event listeners for new links
+            newTaskLink.addEventListener('click', DisplayController.showNewTaskModal);
+            // sidebar nav icons
+            const dashIcon = document.getElementById('dashboard-link-icon');
+            dashIcon.setAttribute('src', _assets_dashboards_png__WEBPACK_IMPORTED_MODULE_4__);
+            const taskIcon = document.getElementById('tasks-link-icon');
+            taskIcon.setAttribute('src', _assets_task_png__WEBPACK_IMPORTED_MODULE_5__);
+            const projectsIcon = document.getElementById('projects-link-icon');
+            projectsIcon.setAttribute('src', _assets_idea_png__WEBPACK_IMPORTED_MODULE_6__);
+            // sidebar link event listeners
+            const dashLink = document.getElementById('nav-dash');
+            const projectsLink = document.getElementById('nav-projects');
+            const tasksLink = document.getElementById('nav-tasks');
+            // Dashboard 
+            dashLink.addEventListener('click', function() {
+                // display dashboard
+                DisplayController.dashboard();
+                DisplayController.setDashboardNavActive();
+            });
+            // Projects
+            projectsLink.addEventListener('click', function() {
+                // display projects
+                DisplayController.showProjectsTab();
+                DisplayController.setProjectsNavActive();
+            });
+            // Tasks
+            tasksLink.addEventListener('click', function() {
+                // display tasks
+                DisplayController.showTasksTab();
+                DisplayController.setTasksNavActive();
+            });    
+        // show dashboard by default
+        DisplayController.dashboard();
+    };
+};
+
+
+
+/***/ }),
+
 /***/ "./src/Project.js":
 /*!************************!*\
   !*** ./src/Project.js ***!
@@ -22525,7 +23082,6 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Project": () => (/* binding */ Project),
 /* harmony export */   "createProject": () => (/* binding */ createProject),
 /* harmony export */   "displayProjects": () => (/* binding */ displayProjects),
 /* harmony export */   "getNumProjects": () => (/* binding */ getNumProjects),
@@ -22536,9 +23092,10 @@ const {format} = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/es
 const projectsList = [];
 
 class Project {
-    constructor(title, description) {
+    constructor(title, description, dueDate) {
         this.title = title;
         this.created = format(new Date(), 'dd.MM.yyyy');
+        this.dueDate = dueDate;
         this.description = description;
         this.todos = [];
         this.complete = false;
@@ -22554,8 +23111,8 @@ class Project {
     }
 }
 
-function createProject(title, description) {
-    const newProject = new Project(title, description);
+function createProject(title, description, dueDate) {
+    const newProject = new Project(title, description, dueDate);
     projectsList.push(newProject);
     return newProject;
 }
@@ -22608,6 +23165,7 @@ class Todo {
         this.description = description;
         this.project = project;
         this.priority = priority;
+        this.overdue = false;
         this.complete = false;
     }
 
@@ -22626,6 +23184,7 @@ class Todo {
 function createTodo(title, description, dueDate, project, priority) {
     const newTodo = new Todo(title, description, dueDate, project, priority);
     todoList.push(newTodo);
+    console.log(todoList);
     return newTodo;
 }
 
@@ -22643,676 +23202,6 @@ function getNumTodos() {
 
 
 
-
-
-
-/***/ }),
-
-/***/ "./src/dashboard.js":
-/*!**************************!*\
-  !*** ./src/dashboard.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects */ "./src/projects.js");
-/* harmony import */ var _setProjectsNavActive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./setProjectsNavActive */ "./src/setProjectsNavActive.js");
-/* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tasks */ "./src/tasks.js");
-/* harmony import */ var _setTasksNavActive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./setTasksNavActive */ "./src/setTasksNavActive.js");
-/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Project */ "./src/Project.js");
-/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Todo */ "./src/Todo.js");
-
-
-
-
-
-
-
- 
-function dashboard() {
-    
-    // reset content
-    const content = document.getElementById('content');
-    content.innerHTML = '';
-
-    // add header
-    const header = document.getElementById('header');
-    header.innerText = 'Dashboard';
-
-    // total projects card
-    const totalProjectsCard = document.createElement('div');
-    totalProjectsCard.classList.add('card');
-    totalProjectsCard.setAttribute('id', 'totalProjectsCard');
-    
-    const totalProjectsCardTitle = document.createElement('p');
-    totalProjectsCardTitle.classList.add('totalCardTitle');
-    totalProjectsCardTitle.innerText = 'Projects';
-    totalProjectsCard.appendChild(totalProjectsCardTitle);
-
-    const totalProjectsCardNumber = document.createElement('p');
-    totalProjectsCardNumber.classList.add('totalCardNumber');
-    totalProjectsCardNumber.innerText = (0,_Project__WEBPACK_IMPORTED_MODULE_5__.getNumProjects)();
-    totalProjectsCard.appendChild(totalProjectsCardNumber);
-
-    content.appendChild(totalProjectsCard);
-
-    // total tasks card
-    const totalTasksCard = document.createElement('div');
-    totalTasksCard.classList.add('card');
-    totalTasksCard.setAttribute('id', 'totalTasksCard');
-    
-    const totalTasksCardTitle = document.createElement('p');
-    totalTasksCardTitle.classList.add('totalCardTitle');
-    totalTasksCardTitle.innerText = 'Tasks';
-    totalTasksCard.appendChild(totalTasksCardTitle);
-
-    const totalTasksCardNumber = document.createElement('p');
-    totalTasksCardNumber.classList.add('totalCardNumber');
-    totalTasksCardNumber.innerText = (0,_Todo__WEBPACK_IMPORTED_MODULE_6__.getNumTodos)();
-    totalTasksCard.appendChild(totalTasksCardNumber);
-
-    content.appendChild(totalTasksCard);
-
-    // total overdue tasks card
-    const totalOverdueCard = document.createElement('div');
-    totalOverdueCard.classList.add('card');
-    totalOverdueCard.setAttribute('id', 'totalOverdueCard');
-    
-    const totalOverdueCardTitle = document.createElement('p');
-    totalOverdueCardTitle.classList.add('totalCardTitle');
-    totalOverdueCardTitle.innerText = 'Overdue';
-    totalOverdueCard.appendChild(totalOverdueCardTitle);
-
-    const totalOverdueCardNumber = document.createElement('p');
-    totalOverdueCardNumber.classList.add('totalCardNumber');
-    // TODO: function for getting total overdues number called here
-    totalOverdueCardNumber.innerText = '2';
-    totalOverdueCard.appendChild(totalOverdueCardNumber);
-
-    content.appendChild(totalOverdueCard);
-
-    // container for recent cards
-    const recentContainer = document.createElement('div');
-    recentContainer.setAttribute('id', 'recentContainer');
-    content.appendChild(recentContainer);
-
-    // Recent projects card
-    const recentProjectsCard = document.createElement('div');
-    recentProjectsCard.classList.add('card');
-    recentProjectsCard.setAttribute('id', 'recentProjectsCard');
-
-    // Recent projects card title container
-    const recentProjectsCardTitleContainer = document.createElement('div');
-    recentProjectsCardTitleContainer.classList.add('recentCardTitleContainer');
-    recentProjectsCard.appendChild(recentProjectsCardTitleContainer);
-
-    // Recent projects card title
-    const recentProjectsCardTitle = document.createElement('p');
-    recentProjectsCardTitle.classList.add('recentCardTitle');
-    recentProjectsCardTitle.setAttribute('id', 'recentProjectsTitle');
-    recentProjectsCardTitle.innerText = 'Projects';
-    recentProjectsCardTitleContainer.appendChild(recentProjectsCardTitle);
-    
-    // Recent projects card link
-    const viewAllProjectsLink = document.createElement('a');
-    viewAllProjectsLink.innerText = 'View all projects';
-    viewAllProjectsLink.setAttribute('id', 'viewAllProjectsLink');
-    recentProjectsCardTitleContainer.appendChild(viewAllProjectsLink);
-    
-    // Recent projects card subtitle
-    const recentProjectsCardSubtitle = document.createElement('p');
-    recentProjectsCardSubtitle.classList.add('recentCardSubtitle');
-    recentProjectsCardSubtitle.innerText = 'Most recent projects';
-    recentProjectsCard.appendChild(recentProjectsCardSubtitle);
-
-    recentContainer.appendChild(recentProjectsCard);
-
-    // Recent tasks card
-    const recentTasksCard = document.createElement('div');
-    recentTasksCard.classList.add('card');
-    recentTasksCard.setAttribute('id', 'recentTasksCard');
-    
-    // title container
-    const recentTasksCardTitleContainer = document.createElement('div');
-    recentTasksCardTitleContainer.classList.add('recentCardTitleContainer');
-    recentTasksCard.appendChild(recentTasksCardTitleContainer);
-    
-    // title
-    const recentTasksCardTitle = document.createElement('p');
-    recentTasksCardTitle.classList.add('recentCardTitle');
-    recentTasksCardTitle.setAttribute('id', 'recentProjectsTitle');
-    recentTasksCardTitle.innerText = 'Tasks';
-    recentTasksCardTitleContainer.appendChild(recentTasksCardTitle);
-
-    // link
-    const viewAllTasksLink = document.createElement('a');
-    viewAllTasksLink.setAttribute('id', 'viewAllTasksLink');
-    viewAllTasksLink.innerText = 'View all tasks';
-    recentTasksCardTitleContainer.appendChild(viewAllTasksLink);
-
-    // subtitle
-    const recentTasksCardSubtitle = document.createElement('p');
-    recentTasksCardSubtitle.classList.add('recentCardSubtitle');
-    recentTasksCardSubtitle.innerText = 'Most recent tasks';
-    recentTasksCard.appendChild(recentTasksCardSubtitle);
-
-    recentContainer.appendChild(recentTasksCard);
-
-    // event listeners for card links
-    viewAllProjectsLink.addEventListener('click', function() {
-        (0,_projects__WEBPACK_IMPORTED_MODULE_1__["default"])();
-        (0,_setProjectsNavActive__WEBPACK_IMPORTED_MODULE_2__["default"])();
-    });
-
-    viewAllTasksLink.addEventListener('click', function() {
-        (0,_tasks__WEBPACK_IMPORTED_MODULE_3__["default"])();
-        (0,_setTasksNavActive__WEBPACK_IMPORTED_MODULE_4__["default"])();
-
-    });
-
-    // display projects
-
-    for (let i = 0; i < _Project__WEBPACK_IMPORTED_MODULE_5__.projectsList.length; i++) {
-        const projectListDiv = document.createElement('div');
-        projectListDiv.classList.add('project-card-list');
-
-        const projectListDivTitle = document.createElement('p');
-        projectListDivTitle.classList.add('project-card-list-title');
-        projectListDivTitle.innerText = _Project__WEBPACK_IMPORTED_MODULE_5__.projectsList[i]['title'];
-        projectListDiv.appendChild(projectListDivTitle);
-
-        const projectListDivNum = document.createElement('p');
-        projectListDivNum.classList.add('project-card-list-num');
-        projectListDivNum.innerText = _Project__WEBPACK_IMPORTED_MODULE_5__.projectsList[i]['todos'].length + ' tasks';
-        projectListDiv.appendChild(projectListDivNum);
-
-        recentProjectsCard.appendChild(projectListDiv);
-
-        // event listener to open this project modal
-        projectListDiv.addEventListener('click', function() {
-            //display this project
-            console.log('Project list project clicked: ' + _Project__WEBPACK_IMPORTED_MODULE_5__.projectsList[i]['title']);
-        })
-    }
-
-    // display tasks
-    for (let i = 0; i < _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList.length; i++) {
-        const todoListDiv = document.createElement('div');
-        todoListDiv.classList.add('task-list-div');
-
-        // task priority
-        if (_Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['priority'] == 'urgent') {
-            todoListDiv.classList.add('urgent');
-        } else {
-            todoListDiv.classList.add('normal');
-        }
-
-        // task title container
-        const todoListDivTitleContainer = document.createElement('span');
-        todoListDivTitleContainer.classList.add('task-list-div-title-container');
-        todoListDiv.appendChild(todoListDivTitleContainer);
-
-        const completeChecker = document.createElement('input');
-        completeChecker.classList.add('checkbox-pad');
-        completeChecker.setAttribute('id', _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['title'] + '-checkbox')
-        completeChecker.setAttribute('type', 'checkbox');
-        completeChecker.setAttribute('name', 'completed')
-        todoListDivTitleContainer.appendChild(completeChecker);
-
-        // task title
-        const todoListDivTitle = document.createElement('p');
-        todoListDivTitle.classList.add('task-list-div-title');
-        todoListDivTitle.innerText = _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['title'];
-        todoListDivTitleContainer.appendChild(todoListDivTitle);
-
-        // task project
-        const todoListDivProject = document.createElement('p');
-        todoListDivProject.classList.add('task-project-subtitle');
-        todoListDivProject.innerText = _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['project'];
-        todoListDivTitleContainer.appendChild(todoListDivProject);
-
-        // task urgency status
-        const todoUrgency = document.createElement('span');
-        todoUrgency.classList.add('task-urgency');
-        const thisTaskUrgency = _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['priority'];
-        todoUrgency.classList.add(thisTaskUrgency);
-        todoUrgency.innerText = thisTaskUrgency;
-   
-
-        todoListDiv.appendChild(todoUrgency);
-
-        recentTasksCard.appendChild(todoListDiv);
-
-        todoListDivTitle.addEventListener('click', function() {
-            console.log('Task list task clicked: ' + _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['title'])
-        })
-
-        completeChecker.addEventListener('click', function() {
-            _Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i].toggleCompleteStatus();
-
-
-            if (_Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['complete']) {
-                todoUrgency.innerText = 'Complete';
-                todoUrgency.classList.add('complete');
-            } else if (!_Todo__WEBPACK_IMPORTED_MODULE_6__.todoList[i]['complete']) {
-                todoUrgency.classList.remove('complete');
-                todoUrgency.innerText = thisTaskUrgency;
-            }
-        })
-    
-
-    }
-};
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dashboard);
-
-
-/***/ }),
-
-/***/ "./src/homepage.js":
-/*!*************************!*\
-  !*** ./src/homepage.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _assets_logo_red_512px_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo-red-512px.svg */ "./src/assets/logo-red-512px.svg");
-/* harmony import */ var _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/plus.png */ "./src/assets/plus.png");
-/* harmony import */ var _assets_plus_filled_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/plus-filled.png */ "./src/assets/plus-filled.png");
-/* harmony import */ var _assets_check_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/check.png */ "./src/assets/check.png");
-/* harmony import */ var _assets_check_active_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/check-active.png */ "./src/assets/check-active.png");
-/* harmony import */ var _assets_cancel_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/cancel.png */ "./src/assets/cancel.png");
-/* harmony import */ var _assets_cancel_filled_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/cancel-filled.png */ "./src/assets/cancel-filled.png");
-/* harmony import */ var _assets_dashboards_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/dashboards.png */ "./src/assets/dashboards.png");
-/* harmony import */ var _assets_task_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/task.png */ "./src/assets/task.png");
-/* harmony import */ var _assets_idea_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/idea.png */ "./src/assets/idea.png");
-/* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./dashboard */ "./src/dashboard.js");
-/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./projects */ "./src/projects.js");
-/* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./tasks */ "./src/tasks.js");
-/* harmony import */ var _setProjectsNavActive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./setProjectsNavActive */ "./src/setProjectsNavActive.js");
-/* harmony import */ var _setDashboardNavActive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./setDashboardNavActive */ "./src/setDashboardNavActive.js");
-/* harmony import */ var _setTasksNavActive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./setTasksNavActive */ "./src/setTasksNavActive.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Building the Template
-
-function homepage(){
-
-    // header logo
-    const logo = document.getElementById('logo');
-    logo.src = _assets_logo_red_512px_svg__WEBPACK_IMPORTED_MODULE_1__;
-
-    // new task / new project buttons
-    const newProjectIcon = document.getElementById('new-project-icon');
-    newProjectIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
-
-    const newProjectLink = document.getElementById('new-project-link');
-
-    newProjectLink.addEventListener('mouseover', function() {
-        newProjectIcon.src = _assets_plus_filled_png__WEBPACK_IMPORTED_MODULE_3__;
-    });
-
-    newProjectLink.addEventListener('mouseleave', function() {
-        newProjectIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
-    });
-
- 
-    const newTaskIcon = document.getElementById('new-task-icon');
-    newTaskIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
-
-    const newTaskLink = document.getElementById('new-task-link');
-
-    newTaskLink.addEventListener('mouseover', function() {
-        newTaskIcon.src = _assets_plus_filled_png__WEBPACK_IMPORTED_MODULE_3__;
-    });
-
-    newTaskLink.addEventListener('mouseleave', function() {
-        newTaskIcon.src = _assets_plus_png__WEBPACK_IMPORTED_MODULE_2__;
-    });
-
-
-    // MODAL
-
-    const newProjectModal = document.getElementById('new-project-modal');
-    const newTaskModal = document.getElementById('new-task-modal');
-
-    // onclick event listeners for new links
-    newProjectLink.addEventListener('click', function() {
-        newProjectModal.classList.remove('modal-hidden');
-        console.log('New project button clicked!');
-
-        const closeModal = document.getElementById('new-project-modal-close');
-        closeModal.addEventListener('click', function() {
-            newProjectModal.classList.add('modal-hidden');
-        })
-
-        // SAVE PROJECT BUTTON
-        const saveIcon = document.getElementById('save-project-icon');
-        saveIcon.src = _assets_check_png__WEBPACK_IMPORTED_MODULE_4__;
-
-        // save project onclick event
-        const saveProject = document.getElementById('save-project');
-        saveProject.addEventListener('mouseover', function() {
-            saveIcon.src = _assets_check_active_png__WEBPACK_IMPORTED_MODULE_5__;
-        });
-        saveProject.addEventListener('mouseleave', function() {
-            saveIcon.src = _assets_check_png__WEBPACK_IMPORTED_MODULE_4__;
-        })
-
-        saveProject.addEventListener('click', function() {
-            // save the project as a new project
-            newProjectModal.classList.add('modal-hidden');
-        });
-
-        // CANCEL PROJECT BUTTON
-        const cancelIcon = document.getElementById('cancel-project-icon');
-        cancelIcon.src = _assets_cancel_png__WEBPACK_IMPORTED_MODULE_6__;
-
-        // cancel project onclick event
-        const cancelProject = document.getElementById('cancel-project');
-        cancelProject.addEventListener('mouseover', function() {
-            cancelIcon.src = _assets_cancel_filled_png__WEBPACK_IMPORTED_MODULE_7__;
-        });
-        cancelProject.addEventListener('mouseleave', function() {
-            cancelIcon.src = _assets_cancel_png__WEBPACK_IMPORTED_MODULE_6__;
-        });
-
-        cancelProject.addEventListener('click', function() {
-            // cancel the new project
-            newProjectModal.classList.add('modal-hidden');
-        });
-    });
-
-
-    newTaskLink.addEventListener('click', function() {
-        console.log('New task button clicked!');
-    });
-
-    // onclick event listeners for new links
-    newTaskLink.addEventListener('click', function() {
-        newTaskModal.classList.remove('modal-hidden');
-        console.log('New task button clicked!');
-
-        const closeModal = document.getElementById('new-task-modal-close');
-        closeModal.addEventListener('click', function() {
-            newTaskModal.classList.add('modal-hidden');
-        })
-
-        // SAVE TASK BUTTON
-        const saveIcon = document.getElementById('save-task-icon');
-        saveIcon.src = _assets_check_png__WEBPACK_IMPORTED_MODULE_4__;
-
-        // save task onclick event
-        const saveTask = document.getElementById('save-task');
-        saveTask.addEventListener('mouseover', function() {
-            saveIcon.src = _assets_check_active_png__WEBPACK_IMPORTED_MODULE_5__;
-        });
-        saveTask.addEventListener('mouseleave', function() {
-            saveIcon.src = _assets_check_png__WEBPACK_IMPORTED_MODULE_4__;
-        })
-
-        saveTask.addEventListener('click', function() {
-            // save the task as a new project
-            newTaskModal.classList.add('modal-hidden');
-        });
-
-        // CANCEL PROJECT BUTTON
-        const cancelIcon = document.getElementById('cancel-task-icon');
-        cancelIcon.src = _assets_cancel_png__WEBPACK_IMPORTED_MODULE_6__;
-
-        // cancel project onclick event
-        const cancelTask = document.getElementById('cancel-task');
-        cancelTask.addEventListener('mouseover', function() {
-            cancelIcon.src = _assets_cancel_filled_png__WEBPACK_IMPORTED_MODULE_7__;
-        });
-        cancelTask.addEventListener('mouseleave', function() {
-            cancelIcon.src = _assets_cancel_png__WEBPACK_IMPORTED_MODULE_6__;
-        });
-
-        cancelTask.addEventListener('click', function() {
-            // cancel the new project
-            newTaskModal.classList.add('modal-hidden');
-        });
-    });
-
-
-
-
-    // sidebar nav icons
-    const dashIcon = document.getElementById('dashboard-link-icon');
-    dashIcon.setAttribute('src', _assets_dashboards_png__WEBPACK_IMPORTED_MODULE_8__);
-
-    const taskIcon = document.getElementById('tasks-link-icon');
-    taskIcon.setAttribute('src', _assets_task_png__WEBPACK_IMPORTED_MODULE_9__);
-
-    const projectsIcon = document.getElementById('projects-link-icon');
-    projectsIcon.setAttribute('src', _assets_idea_png__WEBPACK_IMPORTED_MODULE_10__);
-
-    // sidebar link event listeners
-    const dashLink = document.getElementById('nav-dash');
-    const projectsLink = document.getElementById('nav-projects');
-    const tasksLink = document.getElementById('nav-tasks');
-
-    
-    // Dashboard 
-    dashLink.addEventListener('click', function() {
-        // display dashboard
-        (0,_dashboard__WEBPACK_IMPORTED_MODULE_11__["default"])();
-        (0,_setDashboardNavActive__WEBPACK_IMPORTED_MODULE_15__["default"])();
-    });
-
-    // Projects
-    projectsLink.addEventListener('click', function() {
-        // display projects
-        (0,_projects__WEBPACK_IMPORTED_MODULE_12__["default"])();
-        (0,_setProjectsNavActive__WEBPACK_IMPORTED_MODULE_14__["default"])();
-    });
-
-    // Tasks
-    tasksLink.addEventListener('click', function() {
-        // display tasks
-        (0,_tasks__WEBPACK_IMPORTED_MODULE_13__["default"])();
-        (0,_setTasksNavActive__WEBPACK_IMPORTED_MODULE_16__["default"])();
-    });    
-
-    // show dashboard by default
-    (0,_dashboard__WEBPACK_IMPORTED_MODULE_11__["default"])();
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homepage);
-
-
-
-/***/ }),
-
-/***/ "./src/projects.js":
-/*!*************************!*\
-  !*** ./src/projects.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ "./src/Project.js");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-
-
-
-function projects() {
-
-    // reset content
-    const content = document.getElementById('content');
-    content.innerHTML = '';
-    
-    // add header
-    const header = document.getElementById('header');
-    header.innerText = 'Projects';
-
-
-    
-    
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (projects);
-
-
-
-/***/ }),
-
-/***/ "./src/setDashboardNavActive.js":
-/*!**************************************!*\
-  !*** ./src/setDashboardNavActive.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function setDashboardNavActive() {
-    const dashLink = document.getElementById('nav-dash');
-    const projectsLink = document.getElementById('nav-projects');
-    const tasksLink = document.getElementById('nav-tasks');
-        // add nav-active class
-        if (!dashLink.classList.contains('nav-active')) {
-            dashLink.classList.add('nav-active');
-        };
-
-        // remove 'nav-active' from projectsLink
-        if (projectsLink.classList.contains('nav-active')) {
-            projectsLink.classList.remove('nav-active');
-        };
-
-        // remove 'nav-active' from tasksLink
-        if (tasksLink.classList.contains('nav-active')) {
-            tasksLink.classList.remove('nav-active');
-        };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (setDashboardNavActive);
-
-/***/ }),
-
-/***/ "./src/setProjectsNavActive.js":
-/*!*************************************!*\
-  !*** ./src/setProjectsNavActive.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function setProjectsNavActive() {
-    const dashLink = document.getElementById('nav-dash');
-    const projectsLink = document.getElementById('nav-projects');
-    const tasksLink = document.getElementById('nav-tasks');
-    // add nav-active class
-    if (!projectsLink.classList.contains('nav-active')) {
-        projectsLink.classList.add('nav-active');
-     };
-    
-    // remove 'nav-active' from dashboardLink
-    if (dashLink.classList.contains('nav-active')) {
-        dashLink.classList.remove('nav-active');
-    };
-    
-    // remove 'nav-active' from tasksLink
-    if (tasksLink.classList.contains('nav-active')) {
-        tasksLink.classList.remove('nav-active');
-    };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (setProjectsNavActive);
-
-/***/ }),
-
-/***/ "./src/setTasksNavActive.js":
-/*!**********************************!*\
-  !*** ./src/setTasksNavActive.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function setTasksNavActive() {
-    const dashLink = document.getElementById('nav-dash');
-    const projectsLink = document.getElementById('nav-projects');
-    const tasksLink = document.getElementById('nav-tasks');
-        // add nav-active class
-        if (!tasksLink.classList.contains('nav-active')) {
-            tasksLink.classList.add('nav-active');
-        };
-
-        // remove 'nav-active' from projectsLink
-        if (projectsLink.classList.contains('nav-active')) {
-            projectsLink.classList.remove('nav-active');
-        };
-
-        // remove 'nav-active' from dashLink
-        if (dashLink.classList.contains('nav-active')) {
-            dashLink.classList.remove('nav-active');
-        };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (setTasksNavActive);
-
-/***/ }),
-
-/***/ "./src/tasks.js":
-/*!**********************!*\
-  !*** ./src/tasks.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-
-
-function tasks() {
-
-    // reset content
-    const content = document.getElementById('content');
-    content.innerHTML = '';
-        
-    // add header
-    const header = document.getElementById('header');
-    header.innerText = 'Tasks';
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tasks);
 
 
 
@@ -23504,17 +23393,19 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage */ "./src/homepage.js");
+/* harmony import */ var _DisplayController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DisplayController */ "./src/DisplayController.js");
 /* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Project */ "./src/Project.js");
 /* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Todo */ "./src/Todo.js");
+// This is the script that will load when the user opens the app page.
 
 
 
 
 
+const {format} = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 
 // ON APP OPENING:
-const {format} = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+
 
 // Generate a new defaultProject object
 const defaultProjectTitle = 'My First Project';
@@ -23541,7 +23432,9 @@ defaultProject.addTask(defaultTodo);
 defaultProject.addTask(newTestTodo);
 
 // Build the default template
-(0,_homepage__WEBPACK_IMPORTED_MODULE_1__["default"])();
+let displayController = new _DisplayController__WEBPACK_IMPORTED_MODULE_1__.DisplayController();
+displayController.homepage();
+
 
 
 
@@ -23549,4 +23442,4 @@ defaultProject.addTask(newTestTodo);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle-876f3fd539807fe9f0af.js.map
+//# sourceMappingURL=bundle-84627beb7f303c6afa29.js.map
