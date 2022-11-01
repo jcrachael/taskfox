@@ -18,7 +18,7 @@ const defaultProject = createProject(defaultProjectTitle, defaultProjectDescript
 const defaultTodoTitle = 'My First Task';
 const defaultTodoPriority = 'normal'
 const defaultTodoDescription = 'My first task description!';
-const defaultTodoDueDate = format(new Date(2023, 12, 31), 'dd.MM.yyyy');
+const defaultTodoDueDate = new Date(2023, 12, 30).toLocaleDateString();
 const defaultTodoProject = defaultProject.title;
 
 const defaultTodo = createTodo(defaultTodoTitle, defaultTodoDescription, defaultTodoDueDate, defaultTodoProject, defaultTodoPriority);
@@ -26,7 +26,7 @@ const defaultTodo = createTodo(defaultTodoTitle, defaultTodoDescription, default
 const newTodoTitle = 'My second task';
 const newTodoDescription = 'Another task description goes here.';
 const newTodoPriority = 'urgent';
-const newTodoDueDate = format(new Date(2023, 1, 6), 'dd.MM.yyyy');
+const newTodoDueDate = new Date(2023, 1, 6).toLocaleDateString('en-AU');
 const newTodoProject = defaultProject.title;
 const newTestTodo = createTodo(newTodoTitle, newTodoDescription, newTodoDueDate, newTodoProject, newTodoPriority);
 

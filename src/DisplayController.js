@@ -26,6 +26,7 @@ class DisplayController {
 
     // Show tasks tab
     static showTasksTab() {
+        this.setTasksNavActive();
         // reset content
         const content = document.getElementById('content');
         content.innerHTML = '';
@@ -219,7 +220,15 @@ class DisplayController {
                 };
                 // reset form and refresh dashboard
                 form.reset();
-                DisplayController.dashboard();
+                let header = document.getElementById('header');
+                if (header.innerText == 'Dashboard') {
+                    DisplayController.dashboard();
+                } else if (header.innerText == "Tasks") {
+                    DisplayController.showTasksTab();
+                } else {
+                    DisplayController.showProjectsTab();
+                }
+                
                 newTaskModal.classList.add('modal-hidden');
             };
         });
@@ -256,7 +265,14 @@ class DisplayController {
                 let newProject = createProject(projectInfo.title, projectInfo.dueDate, projectInfo.description);
                 // reset form and refresh dashboard
                 form.reset();
-                DisplayController.dashboard();
+                let header = document.getElementById('header');
+                if (header.innerText == 'Dashboard') {
+                    DisplayController.dashboard();
+                } else if (header.innerText == "Tasks") {
+                    DisplayController.showTasksTab();
+                } else {
+                    DisplayController.showProjectsTab();
+                }
                 newProjectModal.classList.add('modal-hidden');
             };
         });
@@ -426,6 +442,7 @@ class DisplayController {
     
     // Display the dashboard
     static dashboard() {
+        this.setDashboardNavActive();
         // reset content
         const content = document.getElementById('content');
         content.innerHTML = '';
