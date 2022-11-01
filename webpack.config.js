@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { webpack } = require('webpack');
+const { argv } = require('process');
 
 module.exports = {
     // set the mode (production or development)
@@ -17,7 +18,7 @@ module.exports = {
         filename: '[name]-[contenthash].js',
         clean: true,
         assetModuleFilename: '[name][ext]',
-        publicPath: '/'
+        publicPath: argv.mode === 'production' ? '/taskfox/' : '/',
     },
 
     // dev server

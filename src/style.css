@@ -285,6 +285,7 @@ input[type="checkbox"] {
     transform: translateY(-0.15em);
     display: grid;
     place-content: center;
+    cursor: pointer;
 }
 
 input[type="checkbox"]::before {
@@ -500,38 +501,154 @@ input[type="radio"] {
     padding-bottom: 40px;
 }
 
-table {
+.table {
     width: 100%;
-    border-collapse: collapse;
     font-size: 11pt;
 }
 
-thead {
+
+.thead {
     text-align: left;
     text-transform: uppercase;
     font-size: 10pt;
     color: #333;
+    font-weight: bold;
+
 }
 
-td, th {
+.tr {
+    display: grid;
+    grid-template-columns: 7% 20% 20% 20% 20% auto;
     padding: 20px;
     border-bottom: 1px #DFE0EB solid;
 }
 
-td {
+.col-1 {
+    grid-column: 1/2;
+}
+
+.col-2 {
+    grid-column: 2/3;
+}
+
+.col-3 {
+    grid-column: 3/4;
+}
+
+.col-4 {
+    grid-column: 4/5;
+}
+
+.col-5 {
+    grid-column: 5/6;
+}
+
+.col-6 {
+    grid-column: 6/7;
+}
+
+.td {
     color: #333333;
 }
 
-td.todo-title {
+.todo-title {
     font-weight: bold;
 }
 
-tr.urgent > * {
+div.tr.urgent > * {
     color: #ED533E;
 }
 
-tr.complete > * {
+div.tr.complete > * {
     color: #8bc34a;
+}
+
+div.todo-row:hover {
+    background-color: #c0c0c033;
+}
+
+.hidden {
+    display: none;
+}
+
+.expand-container {
+    grid-column: 2/6;
+    padding: 20px 0px;
+    font-size: 10pt;
+}
+
+.expand-title {
+    display: inline-block;
+    font-weight: bold;
+    width: 150px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.expand-content {
+    display: inline-block;
+    width: calc(100% - 150px);
+}
+
+.expand-content.normal {
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    background-color: #F0F1F7;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #9FA2B4;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.expand-content.urgent {
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    background-color: #ED533E;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.expand-content.complete {
+    background-color: #8bc34a;
+    color: #fff;
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 4px;
+}
+
+#edit-btn {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    color: #3E81ED;
+    cursor: pointer;
+    border: none;
+}
+#delete-btn {
+    font-size: 11pt;
+    color: #ED533E;
+    cursor: pointer;
+    border: none;
+}
+.ending-cell button {
+    padding: 2px 8px;
+    background: none;
+    border-radius: 10px;
 }
 
 .priority-td {

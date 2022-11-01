@@ -5,7 +5,7 @@ const todoList = [];
 class Todo {
     constructor(title, description, dueDate, project, priority) {
         this.title = title;
-        this.created = format(new Date(), 'dd.MM.yyyy');
+        this.created = new Date().toLocaleDateString('en-AU');
         this.dueDate = dueDate;
         this.description = description;
         this.project = project;
@@ -43,6 +43,15 @@ function createTodo(title, description, dueDate, project, priority) {
     return newTodo;
 }
 
+function deleteTodo(Todo) {
+    
+    const index = todoList.indexOf(Todo);
+    if (index > -1) {
+        todoList.splice(index, 1)
+    }
+    Todo = null;
+    return
+}
 
 function displayTodos() {
     let taskList = [];
@@ -59,5 +68,5 @@ function getNumTodos() {
 
 
 
-export {Todo, todoList, createTodo, displayTodos, getNumTodos}
+export {Todo, todoList, createTodo, deleteTodo, displayTodos, getNumTodos}
 
