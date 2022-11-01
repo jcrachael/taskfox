@@ -466,6 +466,7 @@ input[type=reset]:hover {
     margin: 20px auto;
 }
 
+
 #save-project, #cancel-project, #save-task, #cancel-task {
     display: flex;
     width: 100%;
@@ -497,6 +498,7 @@ input[type="radio"] {
 #tasks-tab-card {
     grid-row: 1/4;
     grid-column: 1/4;
+    min-width: 800px;
     padding-top: 20px;
     padding-bottom: 40px;
 }
@@ -518,7 +520,7 @@ input[type="radio"] {
 
 .tr {
     display: grid;
-    grid-template-columns: 7% 20% 20% 20% 20% auto;
+    grid-template-columns: 7% 20% 20% 20% min(20%, 110px) auto;
     padding: 20px;
     border-bottom: 1px #DFE0EB solid;
 }
@@ -541,10 +543,17 @@ input[type="radio"] {
 
 .col-5 {
     grid-column: 5/6;
+
+    min-width: 110px;
 }
 
 .col-6 {
     grid-column: 6/7;
+    min-width: 100px;
+
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .td {
@@ -564,7 +573,7 @@ div.tr.complete > * {
 }
 
 div.todo-row:hover {
-    background-color: #c0c0c033;
+    background-color: #00000020;
 }
 
 .hidden {
@@ -577,12 +586,19 @@ div.todo-row:hover {
     font-size: 10pt;
 }
 
+.expand-row {
+    display: flex;
+    align-items: center;
+    height: 35px;
+
+}
+
 .expand-title {
     display: inline-block;
     font-weight: bold;
     width: 150px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+
 }
 
 .expand-content {
@@ -633,11 +649,14 @@ div.todo-row:hover {
 }
 
 #edit-btn {
-    margin-bottom: 10px;
     font-size: 11pt;
     color: #3E81ED;
     cursor: pointer;
     border: none;
+}
+
+#edit-btn:hover, #delete-btn:hover {
+    font-weight: bold;
 }
 
 #delete-btn {

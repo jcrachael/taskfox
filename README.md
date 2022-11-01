@@ -10,9 +10,37 @@ Create a front-end web application where users can define 'Projects' and add 'To
 
 View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untitled?node-id=3%3A34&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=3%3A34&hide-ui=1).
 
+## To-do:
+
+* Actions:
+    
+    * display one Project
+    * edit a Project
+    * toggle Project complete
+    * delete a Project
+    * display all Projects in projectList array
+    * check Project overdue status
+    * set Project to overdue
+    * check Todo overdue status
+    * set Todo to overdue
+    * ~~make new Project~~ done 
+    * ~~add Todo to Project.todos~~ done
+    * ~~remove Todo from Project.todos~~ done
+    * ~~make new Todo~~ done
+    * ~~edit Todo~~ done
+    * ~~toggle Todo complete~~ done
+    * ~~delete Todo~~ done
+    * ~~display all Todos in todoList array~~ done
+    * ~~display x most recent Todos in chronological order~~ done
+    * ~~display x most recent Projects in chronological order~~ done
+    * ~~display one Todo~~ done
+    * ~~get number of Todos~~ done
+    * ~~get number of Projects~~ done
+
 ## Specifications
 
 ### Requirements
+
 * each 'Todo' item will be stored as a JavaScript object 
 * each 'Project' item will be stored as a JavaScript object 
 * UI views:
@@ -26,24 +54,15 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
 * package with webpack
 
 ### UI views
+
 * header & sidebar (on all pages)
-    * logo & app name
-    * nav links to Dashboard, Projects and Tasks views
-    * links for New task and New project
-* Dashboard view:
-    * card: total number of todos, number of overdue todos > click to view Tasks view
-    * card: total number of projects > click to view Projects view
-    * card: 4 most recent projects
-    * card: 4 most recent tasks
-* projects view
-    * card for each project with list of todos in the project > click 'Expand' to view that project view
-* project view:
-    * card with title, date created, description, list of todos,and buttons to:
+* Dashboard view
+* Projects view
+    * card for each Project with title, date created, description, list of todos,and buttons to:
         * mark all todos complete
         * edit project
         * delete project
-* todos view
-    * table list all todos and their properties with option to click on todo to expand the todo view with buttons to edit/delete the todo
+* Tasks view
 
 ### Pseudocode
 
@@ -52,7 +71,7 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
     * created = Date now object,
     * dueDate = Date object,
     * project = Project object title,
-    * priority = 'urgent' or 'not urgent',
+    * priority = 'urgent' or 'normal',
     * overdue = false,
     * description = 'string',
     * complete = false,
@@ -77,50 +96,15 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
         * description = 'This is a project. You can add tasks, edit this project, or add a new project.',
         * todos = [],
 
-* Actions:
-    * make new Project
-    * change Project title
-    * toggle Project complete
-    * change Project description
-    * add Todo to Project.todos
-    * remove Todo from Project.todos
-    * delete Project
-    * make new Todo
-    * change Todo title
-    * toggle Todo complete
-    * toggle Todo priority
-    * change Todo description
-    * change Todo dueDate
-    * change Todo project
-    * set Todo to overdue
-    * delete Todo
-    * display all Todos in todoList array
-    * display all Projects in projectList array
-    * display x most recent Todos in chronological order
-    * display x most recent Projects in chronological order
-    * display one Todo
-    * display one Project
-    * get number of Todos
-    * get number of Projects
-
-
 ### Colors
 
-Primary red: #ED533E
-
-Primary light: #F6F2EF
-
-Primary dark: #26242E
-
-Light accent: #ABA2A4
-
-Dark accent: #928D7E
-
-Green: #8bc34a
-
-Yellow: #fdd835
-
-Urgent red: #E10000
+* Primary red: #ED533E
+* Primary light: #F6F2EF
+* Primary dark: #26242E
+* Light accent: #ABA2A4
+* Dark accent: #928D7E
+* Green: #8bc34a
+* Yellow: #fdd835
 
 
 ### Credits
@@ -135,4 +119,4 @@ Tasks icon by [icon_small](https://www.flaticon.com/free-icons/task) on [Flatico
 
 --- 
 
-Last modified: 1 November 2022
+Last modified: 2 November 2022

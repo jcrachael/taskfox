@@ -1,3 +1,5 @@
+// This is the Todo object and related functions, which will store each 'task' a.k.a. Todo item
+
 import { Project, projectsList } from "./Project";
 
 const todoList = [];

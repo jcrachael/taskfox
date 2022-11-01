@@ -9,13 +9,9 @@ import dash from './assets/dashboards.png';
 import task from './assets/task.png';
 import idea from './assets/idea.png';
 
-
 // JS module imports
 import { todoList, createTodo, displayTodos, deleteTodo, editTodo, getNumTodos} from "./Todo";
 import { createProject, getNumProjects, projectsList } from './Project';
-
-
-
 
 class DisplayController {
     constructor(){};
@@ -101,7 +97,7 @@ class DisplayController {
             checkbox.classList.add('checkbox-pad');
             checkbox.setAttribute('id', todoList[i]['title'] + '-checkbox')
             checkbox.setAttribute('type', 'checkbox');
-            checkbox.setAttribute('name', 'completed')
+            checkbox.setAttribute('name', 'completed');
 
 
             todoDataCheck.appendChild(checkbox);
@@ -164,6 +160,7 @@ class DisplayController {
 
             let expandDateCreated = document.createElement('div');
             expandDateCreated.classList.add('expand-date-created');
+            expandDateCreated.classList.add('expand-row');
             newRow.appendChild(expandDateCreated);
             let expandDateCreatedTitle = document.createElement('div');
             expandDateCreatedTitle.classList.add('expand-title');
@@ -176,6 +173,7 @@ class DisplayController {
             
             let expandDueDate = document.createElement('div');
             expandDueDate.classList.add('expand-due-date');
+            expandDueDate.classList.add('expand-row');
             newRow.appendChild(expandDueDate);
             let expandDueDateTitle = document.createElement('div');
             expandDueDateTitle.classList.add('expand-title');
@@ -188,6 +186,7 @@ class DisplayController {
 
             let expandDescription = document.createElement('div');
             expandDescription.classList.add('expand-description');
+            expandDescription.classList.add('expand-row');
             newRow.appendChild(expandDescription);
             let expandDescriptionTitle = document.createElement('div');
             expandDescriptionTitle.classList.add('expand-title');
@@ -200,6 +199,7 @@ class DisplayController {
 
             let expandProject = document.createElement('div');
             expandProject.classList.add('expand-project');
+            expandProject.classList.add('expand-row');
             newRow.appendChild(expandProject);
             let expandProjectTitle = document.createElement('div');
             expandProjectTitle.classList.add('expand-title');
@@ -212,6 +212,7 @@ class DisplayController {
 
             let expandPriority = document.createElement('div');
             expandPriority.classList.add('expand-project');
+            expandPriority.classList.add('expand-row');
             newRow.appendChild(expandPriority);
             let expandPriorityTitle = document.createElement('div');
             expandPriorityTitle.classList.add('expand-title');
@@ -228,7 +229,7 @@ class DisplayController {
 
             // For Each Row:
             todoRow.addEventListener('mouseenter', function() {
-                endingCell.style.display = 'inherit';
+                endingCell.style.display = 'flex';
                 newRow.classList.remove('hidden');
                 newRow.classList.add('expand');
                 if (todoRow.classList.contains('complete')) {
@@ -267,6 +268,8 @@ class DisplayController {
                     prioritySpan.classList.add(todoList[i]['priority']);
                     prioritySpan.innerText = todoList[i]['initialPriority'];
                 };
+                DisplayController.resetContent();
+                DisplayController.showTasksTab();
             }); 
 
             
@@ -347,7 +350,7 @@ class DisplayController {
                     } else {
                         DisplayController.showProjectsTab();
                     }
-                    });
+                });
                     
             });
             
@@ -357,7 +360,8 @@ class DisplayController {
                 let parentRow = this.parentElement.parentElement.parentElement;
                 let thisRow = this.parentElement.parentElement
                 parentRow.removeChild(thisRow);
-                // refresh the tab
+                // refresh page
+                DisplayController.showTasksTab();
             });
             
             
@@ -642,6 +646,8 @@ class DisplayController {
                     todoUrgency.classList.add(todoList[i]['priority']);
                     todoUrgency.innerText = todoList[i]['initialPriority'];
                 };
+                DisplayController.resetContent();
+                DisplayController.dashboard();
             });
         };
     };

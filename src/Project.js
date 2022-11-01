@@ -1,4 +1,4 @@
-
+// This is the Projects object (and related functions) which will store Projects
 
 const projectsList = [];
 

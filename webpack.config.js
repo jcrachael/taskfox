@@ -8,11 +8,9 @@ module.exports = {
     mode: 'production',
 
     // set entry
-    entry: {
-        
+    entry: { 
         bundle: path.resolve(__dirname, './src/index.js'),
-        // displayControl: path.resolve(__dirname, './src/DisplayController.js'),
-    },
+   },
 
     // set output
     output: {
