@@ -105,26 +105,34 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
 
 
 ### Colors
+
 Primary red: #ED533E
+
 Primary light: #F6F2EF
+
 Primary dark: #26242E
+
 Light accent: #ABA2A4
+
 Dark accent: #928D7E
+
 Green: #8bc34a
+
 Yellow: #fdd835
+
 Urgent red: #E10000
 
 
 ### Credits
 Fox, idea icons made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/).
 
-Plus, delete, edit, check, minus icons made by [dmitri13](https://www.flaticon.com/authors/dmitri13) from [Flaticon](https://www.flaticon.com/). Filled check icon made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [Flaticon](https://www.flaticon.com/).
+Plus icon made by [dmitri13](https://www.flaticon.com/authors/dmitri13) from [Flaticon](https://www.flaticon.com/). 
 
 Dashboard icon by [Stockes Design](https://www.flaticon.com/free-icons/dashboard) on [Flaticon](https://www.flaticon.com/).
 
-Task icon by [icon_small](https://www.flaticon.com/free-icons/task) on [Flaticon](https://www.flaticon.com/).
+Tasks icon by [icon_small](https://www.flaticon.com/free-icons/task) on [Flaticon](https://www.flaticon.com/).
 
 
 --- 
 
-Last modified: 28 October 2022
+Last modified: 1 November 2022
