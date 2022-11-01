@@ -10,23 +10,33 @@ class Todo {
         this.description = description;
         this.project = project;
         this.priority = priority;
+        this.initialPriority = priority;
         this.overdue = false;
         this.complete = false;
     }
 
+    
+
     toggleCompleteStatus() {
         if (this.complete == false) {
             this.complete = true;
+            this.priority = 'complete';
             return 
         } else if (this.complete == true) {
             this.complete = false;
+            this.priority = this.initialPriority;
             return 
         }
+    }
+
+    getInfo() {
+        return [this.title, this.created, this.dueDate, this.description, this.project, this.priority, this.overdue, this.complete];
     }
 }
 
 
 function createTodo(title, description, dueDate, project, priority) {
+    
     const newTodo = new Todo(title, description, dueDate, project, priority);
     todoList.push(newTodo);
     console.log(todoList);
@@ -35,9 +45,12 @@ function createTodo(title, description, dueDate, project, priority) {
 
 
 function displayTodos() {
+    let taskList = [];
     for (let i = 0; i < todoList.length; i++) {
-        return todoList[i]['title'];
+        let info = todoList[i].getInfo();
+        taskList.push(info);
     }
+    return taskList;
 };
 
 function getNumTodos() {

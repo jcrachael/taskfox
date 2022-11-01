@@ -14,11 +14,11 @@ import cancel from './assets/cancel.png';
 import cancelFilled from './assets/cancel-filled.png';
 
 // JS module imports
-import { todoList, createTodo } from "./Todo";
+import { todoList, createTodo, displayTodos } from "./Todo";
 import { createProject, getNumProjects } from './Project';
 import { getNumTodos } from './Todo';
 import { projectsList } from "./Project";
-import { format } from 'date-fns';
+import { format, toDate } from 'date-fns';
 
 
 class DisplayController {
@@ -33,6 +33,110 @@ class DisplayController {
         // add header
         const header = document.getElementById('header');
         header.innerText = 'Tasks';
+
+        // display card
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.setAttribute('id', 'tasks-tab-card');
+        content.appendChild(card);
+
+        // add table to card
+        const table = document.createElement('table');
+        card.appendChild(table);
+        // header row
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        let tr = document.createElement('tr');
+        thead.appendChild(tr);
+        let th1 = document.createElement('th');
+        tr.appendChild(th1);
+        let th2 = document.createElement('th');
+        th2.innerText = 'Task';
+        tr.appendChild(th2);
+        let th3 = document.createElement('th');
+        th3.innerText = 'Due date';
+        tr.appendChild(th3);
+        let th4 = document.createElement('th');
+        th4.innerText = 'Project';
+        tr.appendChild(th4);
+        let th5 = document.createElement('th');
+        th5.innerText = 'Priority';
+        tr.appendChild(th5);
+
+        // get all tasks
+        let arrayOfTodos = displayTodos();
+        for (let i = 0; i < arrayOfTodos.length; i++) {
+            // make a table row
+            let todoRow = document.createElement('tr');
+            todoRow.classList.add('todo-row');
+            todoRow.classList.add(todoList[i]['priority']);
+            todoRow.setAttribute('id', 'todo-row-' + i);
+            tbody.appendChild(todoRow);
+            // make the th for the checkbox
+            let todoDataCheck = document.createElement('td');
+            let checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+
+            checkbox.classList.add('checkbox-pad');
+            checkbox.setAttribute('id', todoList[i]['title'] + '-checkbox')
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.setAttribute('name', 'completed')
+
+
+            todoDataCheck.appendChild(checkbox);
+            todoRow.appendChild(todoDataCheck);
+            // make the title th
+            let todoTitle = document.createElement('td');
+            todoTitle.classList.add('todo-title');
+            todoTitle.innerText = arrayOfTodos[i][0];
+            todoRow.appendChild(todoTitle);
+            // make the due date th
+            let todoDueDate = document.createElement('td');
+            todoDueDate.innerText = arrayOfTodos[i][2];
+            todoRow.appendChild(todoDueDate);
+            // make the project th
+            let todoProject = document.createElement('td');
+            todoProject.innerText = arrayOfTodos[i][4];
+            todoRow.appendChild(todoProject);
+            // make the priority th
+            let todoPriority = document.createElement('td');
+            todoPriority.classList.add('priority-td');
+            let prioritySpan = document.createElement('div');
+            let priority = arrayOfTodos[i][5];
+            prioritySpan.classList.add('task-urgency');
+            prioritySpan.classList.add(priority);
+            prioritySpan.innerText = priority;
+            todoPriority.appendChild(prioritySpan);
+            todoRow.appendChild(todoPriority);
+
+            if (todoRow.classList.contains('complete')) {
+                checkbox.checked = true;
+            }
+
+            checkbox.addEventListener('click', function() {
+           
+                // toggle complete status of this todo
+                todoList[i].toggleCompleteStatus();
+                prioritySpan.innerText = todoList[i]['priority'];
+                if (todoList[i]['complete'] === true) {
+                    prioritySpan.classList.add('complete');
+                    todoRow.classList.add('complete');
+                } else if (todoList[i]['complete'] === false) {
+                    prioritySpan.classList.remove('complete');
+                    todoRow.classList.remove('complete');
+
+                    prioritySpan.classList.add(todoList[i]['priority']);
+            
+
+
+                    prioritySpan.innerText = todoList[i]['initialPriority'];
+                };
+
+            });
+        };
+ 
     };
 
     static showProjectsTab() {
@@ -53,6 +157,9 @@ class DisplayController {
         cancelButton.addEventListener('click', function() {
             newTaskModal.classList.add('modal-hidden');
         })
+        const dueDateInput = document.getElementById('new-task-due-date');
+        let dateMin = new Date().toLocaleDateString('en-ca');
+        dueDateInput.setAttribute('min', dateMin);
         // populate select options
         const selections = document.getElementById('project-select');
         selections.innerHTML = '';
@@ -80,6 +187,7 @@ class DisplayController {
                 let taskInfo = {};
                 let title = document.getElementById('new-task-title').value;
                 let dueDate = document.getElementById('new-task-due-date').value;
+                
                 let description = document.getElementById('new-task-description').value;
                 let projectTitle;
                 let priority;
@@ -123,7 +231,10 @@ class DisplayController {
         const cancelButton = document.getElementById('cancel-project-btn');
         cancelButton.addEventListener('click', function() {
             newProjectModal.classList.add('modal-hidden');
-        })
+        });
+        const dueDateInput = document.getElementById('new-project-due-date');
+        let dateMin = new Date().toLocaleDateString('en-ca');
+        dueDateInput.setAttribute('min', dateMin);
         const form = document.getElementById('new-project-form');
         // SAVE PROJECT BUTTON
         const saveProject = document.getElementById('submit-project-btn');
@@ -158,7 +269,7 @@ class DisplayController {
         oldlist.forEach(item => { item.remove()});
 
         // display tasks
-        for (let i = 0; i < todoList.length; i++) {
+        for (let i = todoList.length - 1; i >= 0; i--) {
             const todoListDiv = document.createElement('div');
             todoListDiv.classList.add('task-list-div');
 
@@ -203,19 +314,23 @@ class DisplayController {
             todoListDiv.appendChild(todoUrgency);
 
             recentTasksCard.appendChild(todoListDiv);
+            todoListDiv.classList.add(todoList[i]['priority']);
 
-            todoListDivTitle.addEventListener('click', function() {
-                console.log('Task list task clicked: ' + todoList[i]['title'])
-            })
-
+            if (todoListDiv.classList.contains('complete')) {
+                completeChecker.checked = true;
+            }
+           
             completeChecker.addEventListener('click', function() {
                 todoList[i].toggleCompleteStatus();
-                if (todoList[i]['complete']) {
+                if (todoList[i]['complete'] === true) {
                     todoUrgency.innerText = 'Complete';
                     todoUrgency.classList.add('complete');
-                } else if (!todoList[i]['complete']) {
+                    todoListDiv.classList.add('complete');
+                } else if (todoList[i]['complete'] === false) {
+                    todoListDiv.classList.remove('complete');
                     todoUrgency.classList.remove('complete');
-                    todoUrgency.innerText = thisTaskUrgency;
+                    todoUrgency.classList.add(todoList[i]['priority']);
+                    todoUrgency.innerText = todoList[i]['initialPriority'];
                 };
             });
         };
@@ -288,7 +403,7 @@ class DisplayController {
         // display projects
         let oldlist = document.querySelectorAll('.project-card-list');
         oldlist.forEach(item => { item.remove()});
-        for (let i = 0; i < projectsList.length; i++) {
+        for (let i = projectsList.length - 1; i >= 0; i--) {
             const projectListDiv = document.createElement('div');
             projectListDiv.classList.add('project-card-list');
             const projectListDivTitle = document.createElement('p');
