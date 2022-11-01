@@ -14,10 +14,11 @@ import cancel from './assets/cancel.png';
 import cancelFilled from './assets/cancel-filled.png';
 
 // JS module imports
-import { todoList } from "./Todo";
-import { getNumProjects } from './Project';
+import { todoList, createTodo } from "./Todo";
+import { createProject, getNumProjects } from './Project';
 import { getNumTodos } from './Todo';
 import { projectsList } from "./Project";
+import { format } from 'date-fns';
 
 
 class DisplayController {
@@ -41,52 +42,17 @@ class DisplayController {
         // add header
         const header = document.getElementById('header');
         header.innerText = 'Projects';
-    };
-
-    // Extract new Todo object's properties from the user's input
-    static getNewTaskInfo() {
-        let title = document.getElementById('new-task-title').value;
-        let dueDate = document.getElementById('new-task-due-date').value;
-        let description = document.getElementById('new-task-description').value;
-        let projectTitle;
-        let priority;
-        let urgentRadio = document.getElementById('urgent');
-        let normalRadio = document.getElementById('noturgent');
-
-        if (urgentRadio.checked) {
-            priority = 'urgent';
-        } else if (normalRadio.checked) {
-            priority = 'normal';
-        };
-
-        let projectSelect = document.getElementById('project-select');
-        let projectOptions = projectSelect.children;
-        for (let i = 0; i < projectOptions.length; i++) {
-            if (projectOptions[i].selected) {
-                projectTitle = projectOptions[i].value
-            }
-        };
-
-        if (title == '' || dueDate == '' || description == '' || projectTitle == '' || priority == undefined) {
-            window.alert("Error: please fill in all fields.");
-        } else {
-            return {title, dueDate, description, projectTitle, priority}
-        };
-    };
-
-    
-
+    };   
 
     // Show new task modal
     static showNewTaskModal() {
         const newTaskModal = document.getElementById('new-task-modal');
         newTaskModal.classList.remove('modal-hidden');
-
-        const closeModal = document.getElementById('new-task-modal-close');
-        closeModal.addEventListener('click', function() {
+        // set Cancel button event listener
+        const cancelButton = document.getElementById('cancel-task-btn');
+        cancelButton.addEventListener('click', function() {
             newTaskModal.classList.add('modal-hidden');
         })
-
         // populate select options
         const selections = document.getElementById('project-select');
         selections.innerHTML = '';
@@ -99,99 +65,92 @@ class DisplayController {
         }
 
         // SAVE TASK BUTTON
-        const saveIcon = document.getElementById('save-task-icon');
-        saveIcon.src = check;
-
         // save task onclick event
-        const saveTask = document.getElementById('save-task');
-        saveTask.addEventListener('mouseover', function() {
-            saveIcon.src = checkFilled;
-        });
-        saveTask.addEventListener('mouseleave', function() {
-            saveIcon.src = check;
-        })
+        const saveTask = document.getElementById('submit-task-btn');
+        const form = document.getElementById('new-task-form');
 
-        saveTask.addEventListener('click', function() {
-            // TODO: fix this buggy function
-            // check all fields are filled in
-            let taskInfo = DisplayController.getNewTaskInfo();
-            // save the task
-            let newTask = createTodo(taskInfo.title, taskInfo.description, taskInfo.dueDate, taskInfo.projectTitle, taskInfo.priority);
-            // add to the right project list
-            for (let i = 0; i < projectsList.length; i++) {
-                if (projectsList[i]['title'] == taskInfo.projectTitle) {
-                    projectsList[i].addTask(newTask);
-                }
+        saveTask.addEventListener('click', function(e) {
+            // Prevent default event
+            e.preventDefault();
+            // check validity
+            let isValid = form.reportValidity();
+
+            // if form is valid, save the new task
+            if (isValid) {
+                let taskInfo = {};
+                let title = document.getElementById('new-task-title').value;
+                let dueDate = document.getElementById('new-task-due-date').value;
+                let description = document.getElementById('new-task-description').value;
+                let projectTitle;
+                let priority;
+                let urgentRadio = document.getElementById('urgent');
+                let normalRadio = document.getElementById('noturgent');
+                if (urgentRadio.checked) {
+                    priority = 'urgent';
+                } else if (normalRadio.checked) {
+                    priority = 'normal';
+                };
+                let projectSelect = document.getElementById('project-select');
+                let projectOptions = projectSelect.children;
+                for (let i = 0; i < projectOptions.length; i++) {
+                    if (projectOptions[i].selected) {
+                        projectTitle = projectOptions[i].value
+                    }
+                };
+                taskInfo.title = title;
+                taskInfo.dueDate = dueDate;
+                taskInfo.description = description;
+                taskInfo.projectTitle = projectTitle;
+                taskInfo.priority = priority;
+                let newTask = createTodo(taskInfo.title, taskInfo.description, taskInfo.dueDate, taskInfo.projectTitle, taskInfo.priority);
+                // add to the right project list
+                for (let i = 0; i < projectsList.length; i++) {
+                    if (projectsList[i]['title'] == taskInfo.projectTitle) {
+                        projectsList[i].addTask(newTask);
+                    }
+                };
+                // reset form and refresh dashboard
+                form.reset();
+                DisplayController.dashboard();
+                newTaskModal.classList.add('modal-hidden');
             };
-            DisplayController.dashboard();
-            newTaskModal.classList.add('modal-hidden');
-        });
-
-        // CANCEL PROJECT BUTTON
-        const cancelIcon = document.getElementById('cancel-task-icon');
-        cancelIcon.src = cancel;
-
-        // cancel project onclick event
-        const cancelTask = document.getElementById('cancel-task');
-        cancelTask.addEventListener('mouseover', function() {
-            cancelIcon.src = cancelFilled;
-        });
-        cancelTask.addEventListener('mouseleave', function() {
-            cancelIcon.src = cancel;
-        });
-
-        cancelTask.addEventListener('click', function() {
-            // cancel the new project
-            newTaskModal.classList.add('modal-hidden');
         });
     };
 
     static showNewProjectModal() {
         const newProjectModal = document.getElementById('new-project-modal');
         newProjectModal.classList.remove('modal-hidden');
-        console.log('New project button clicked!');
-
-        const closeModal = document.getElementById('new-project-modal-close');
-        closeModal.addEventListener('click', function() {
+        const cancelButton = document.getElementById('cancel-project-btn');
+        cancelButton.addEventListener('click', function() {
             newProjectModal.classList.add('modal-hidden');
         })
-
+        const form = document.getElementById('new-project-form');
         // SAVE PROJECT BUTTON
-        const saveIcon = document.getElementById('save-project-icon');
-        saveIcon.src = check;
-
+        const saveProject = document.getElementById('submit-project-btn');
         // save project onclick event
-        const saveProject = document.getElementById('save-project');
-        saveProject.addEventListener('mouseover', function() {
-            saveIcon.src = checkFilled;
-        });
-        saveProject.addEventListener('mouseleave', function() {
-            saveIcon.src = check;
-        })
-
-        saveProject.addEventListener('click', function() {
-            // save the project as a new project
-            newProjectModal.classList.add('modal-hidden');
-        });
-
-        // CANCEL PROJECT BUTTON
-        const cancelIcon = document.getElementById('cancel-project-icon');
-        cancelIcon.src = cancel;
-
-        // cancel project onclick event
-        const cancelProject = document.getElementById('cancel-project');
-        cancelProject.addEventListener('mouseover', function() {
-            cancelIcon.src = cancelFilled;
-        });
-        cancelProject.addEventListener('mouseleave', function() {
-            cancelIcon.src = cancel;
-        });
-
-        cancelProject.addEventListener('click', function() {
-            // cancel the new project
-            newProjectModal.classList.add('modal-hidden');
+        saveProject.addEventListener('click', function(e) {
+            // prevent default event and check validity
+            e.preventDefault();
+            let isValid = form.reportValidity();
+            // If the form is valid, save the project as a new project
+            if (isValid) {
+                // Save the project
+                let projectInfo = {};
+                let title = document.getElementById('new-project-title').value;
+                let dueDate = document.getElementById('new-project-due-date').value;
+                let description = document.getElementById('new-project-description').value;
+                projectInfo.title = title;
+                projectInfo.dueDate = dueDate;
+                projectInfo.description = description;
+                let newProject = createProject(projectInfo.title, projectInfo.dueDate, projectInfo.description);
+                // reset form and refresh dashboard
+                form.reset();
+                DisplayController.dashboard();
+                newProjectModal.classList.add('modal-hidden');
+            };
         });
     };
+
 
     // Display tasks to dashboard
     static displayTaskstoDash() {
@@ -522,7 +481,6 @@ class DisplayController {
             newTaskLink.addEventListener('mouseleave', function() {
                 newTaskIcon.src = plus;
             });
-    
     
             // MODAL
             // onclick event listeners for new links

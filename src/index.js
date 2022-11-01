@@ -4,10 +4,10 @@ import './style.css';
 import { DisplayController } from './DisplayController';
 import {createProject } from './Project';
 import { createTodo } from './Todo';
-
+const {format} = require('date-fns');
 
 // ON APP OPENING:
-const {format} = require('date-fns');
+
 
 // Generate a new defaultProject object
 const defaultProjectTitle = 'My First Project';
@@ -32,8 +32,6 @@ const newTestTodo = createTodo(newTodoTitle, newTodoDescription, newTodoDueDate,
 
 defaultProject.addTask(defaultTodo);
 defaultProject.addTask(newTestTodo);
-
-
 
 // Build the default template
 let displayController = new DisplayController();

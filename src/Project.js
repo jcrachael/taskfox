@@ -3,9 +3,10 @@ const {format} = require('date-fns');
 const projectsList = [];
 
 class Project {
-    constructor(title, description) {
+    constructor(title, description, dueDate) {
         this.title = title;
         this.created = format(new Date(), 'dd.MM.yyyy');
+        this.dueDate = dueDate;
         this.description = description;
         this.todos = [];
         this.complete = false;
@@ -21,8 +22,8 @@ class Project {
     }
 }
 
-function createProject(title, description) {
-    const newProject = new Project(title, description);
+function createProject(title, description, dueDate) {
+    const newProject = new Project(title, description, dueDate);
     projectsList.push(newProject);
     return newProject;
 }

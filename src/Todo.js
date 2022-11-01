@@ -29,6 +29,7 @@ class Todo {
 function createTodo(title, description, dueDate, project, priority) {
     const newTodo = new Todo(title, description, dueDate, project, priority);
     todoList.push(newTodo);
+    console.log(todoList);
     return newTodo;
 }
 

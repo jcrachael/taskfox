@@ -421,24 +421,46 @@ span.complete {
     grid-column: 1/3;
 }
 
-#new-project-buttons img, #new-task-buttons img {
+#new-project-buttons img {
     height: 20px;
     padding-right: 10px;
 }
 
-.save {
+input[type=submit] {
+    background-color: #fff;
     color: #8bc34a;
-    margin-right: 40px;
+    border: 1px #8bc34a solid !important;
+    cursor: pointer;
 }
 
-.cancel {
+input[type=submit]:hover {
+    background-color: #8bc34a;
+    color: #fff;
+}
+
+input[type=reset] {
+    background-color: #fff;
     color: #ED533E;
+    border: 1px #ED533E solid !important;
+    cursor: pointer;
+}
+
+input[type=reset]:hover {
+    background-color: #ED533E;
+    color: #fff;
+}
+
+#submit-task-btn, #submit-project-btn, #cancel-task-btn, #cancel-project-btn {
+    width: 80%;
+    font-weight: bold;
+    margin: 20px auto;
 }
 
 #save-project, #cancel-project, #save-task, #cancel-task {
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    cursor: pointer;
+    
 }
 
 select {
