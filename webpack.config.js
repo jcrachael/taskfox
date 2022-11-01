@@ -5,11 +5,13 @@ const { argv } = require('process');
 
 module.exports = {
     // set the mode (production or development)
-    mode: 'development',
+    mode: 'production',
 
     // set entry
     entry: {
+        
         bundle: path.resolve(__dirname, './src/index.js'),
+        // displayControl: path.resolve(__dirname, './src/DisplayController.js'),
     },
 
     // set output
@@ -18,7 +20,7 @@ module.exports = {
         filename: '[name]-[contenthash].js',
         clean: true,
         assetModuleFilename: '[name][ext]',
-        publicPath: argv.mode === 'production' ? '/taskfox/' : '/',
+        publicPath: '/',
     },
 
     // dev server
@@ -56,4 +58,20 @@ module.exports = {
             template: 'src/template.html',
         }),
     ],
+
+    // optimisation
+    optimization: {
+        moduleIds: 'deterministic', // Added this to retain hash of vendor chunks
+        runtimeChunk: 'single',
+        // separate all third party runtime chunk files from main chunk
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                },
+            },
+        },
+    },
 }

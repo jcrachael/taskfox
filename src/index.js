@@ -4,7 +4,7 @@ import './style.css';
 import { DisplayController } from './DisplayController';
 import {createProject } from './Project';
 import { createTodo } from './Todo';
-const {format} = require('date-fns');
+
 
 // ON APP OPENING:
 

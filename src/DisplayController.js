@@ -8,17 +8,13 @@ import plusFilled from './assets/plus-filled.png';
 import dash from './assets/dashboards.png';
 import task from './assets/task.png';
 import idea from './assets/idea.png';
-import check from './assets/check.png';
-import checkFilled from './assets/check-active.png';
-import cancel from './assets/cancel.png';
-import cancelFilled from './assets/cancel-filled.png';
+
 
 // JS module imports
-import { todoList, createTodo, displayTodos, deleteTodo } from "./Todo";
-import { createProject, getNumProjects } from './Project';
-import { getNumTodos } from './Todo';
-import { projectsList } from "./Project";
-import { format, toDate } from 'date-fns';
+import { todoList, createTodo, displayTodos, deleteTodo, editTodo, getNumTodos} from "./Todo";
+import { createProject, getNumProjects, projectsList } from './Project';
+
+
 
 
 class DisplayController {
@@ -115,19 +111,19 @@ class DisplayController {
             todoTitle.classList.add('td');
             todoTitle.classList.add('col-2');
             todoTitle.classList.add('todo-title');
-            todoTitle.innerText = arrayOfTodos[i][0];
+            todoTitle.innerText = todoList[i]['title'];
             todoRow.appendChild(todoTitle);
             // make the due date th
             let todoDueDate = document.createElement('div');
             todoDueDate.classList.add('td');
             todoDueDate.classList.add('col-3');
-            todoDueDate.innerText = arrayOfTodos[i][2];
+            todoDueDate.innerText = todoList[i]['dueDate'];
             todoRow.appendChild(todoDueDate);
             // make the project th
             let todoProject = document.createElement('div');
             todoProject.classList.add('td');
             todoProject.classList.add('col-4');
-            todoProject.innerText = arrayOfTodos[i][4];
+            todoProject.innerText = todoList[i]['project'];
             todoRow.appendChild(todoProject);
             // make the priority th
             let todoPriority = document.createElement('div');
@@ -135,7 +131,7 @@ class DisplayController {
             todoPriority.classList.add('col-5');
             todoPriority.classList.add('priority-td');
             let prioritySpan = document.createElement('div');
-            let priority = arrayOfTodos[i][5];
+            let priority = todoList[i]['priority'];
             prioritySpan.classList.add('task-urgency');
             prioritySpan.classList.add(priority);
             prioritySpan.innerText = priority;
@@ -149,20 +145,16 @@ class DisplayController {
             endingCell.classList.add('hidden');
             let editButton = document.createElement('button');
             editButton.classList.add('task-btn');
+            editButton.classList.add(`index-${i}`)
             editButton.setAttribute('id', 'edit-btn');
             editButton.innerText = 'Edit';
             let deleteButton = document.createElement('button');
             deleteButton.classList.add('task-btn');
-            deleteButton.setAttribute('id', 'delete-btn');
+            deleteButton.setAttribute('id', `delete-btn`);
             deleteButton.innerText = 'Delete';
             endingCell.appendChild(editButton);
             endingCell.appendChild(deleteButton);
-            
-          
             todoRow.appendChild(endingCell);
-
-      
-
             
             // show more info on hover
             let newRow = document.createElement('div');
@@ -278,21 +270,98 @@ class DisplayController {
             }); 
 
             
+
+            // Edit task button event listener
+            editButton.addEventListener('click', function() {
+                let container = document.getElementById('container');
+                let oldPanel = document.getElementById('edit-task-panel');
+                if (oldPanel) {container.removeChild(oldPanel);}
+                let index = i;
+                // build the form
+                let editTaskDisplay = DisplayController.editTaskPanel(index);
+                // add form to display
+                container.appendChild(editTaskDisplay);
+                // save form as a variable
+                let form = document.getElementById('edit-task-form');
+                // populate select options
+                const selections = document.getElementById('edit-project-select');
+                selections.innerHTML = '';
+                for (let i in projectsList) {
+                    let thisProject = projectsList[i]['title'];
+                    let optionEl = document.createElement('option');
+                    optionEl.setAttribute('value', thisProject);
+                    optionEl.innerText = thisProject;
+                    selections.appendChild(optionEl);
+                }
+                // add event listener to cancel button: hide the panel
+                let cancelEditButton = document.getElementById('cancel-task-edit-btn');
+                cancelEditButton.addEventListener('click', function() {
+                    editTaskDisplay.classList.add('hidden');
+                });
+
+                // add event listener to save button
+                let saveEditButton = document.getElementById('save-task-edit-btn');
+                saveEditButton.addEventListener('click', function(e) {
+                    // prevent default event and hide panel
+                    e.preventDefault();
+                    editTaskDisplay.classList.add('hidden');
+                    // get info from fields with input
+                    let newValues = {};
+                    let newTitle = document.getElementById('edit-task-title').value;
+                    let newDueDate = document.getElementById('edit-task-due-date').value;
+                    let newDescription = document.getElementById('edit-task-description').value;
+                    let newProjectTitle;
+                    let newPriority;
+                    let urgentRadio = document.getElementById('edit-urgent');
+                    let normalRadio = document.getElementById('edit-noturgent');
+                    if (urgentRadio.checked) {
+                        newPriority = 'urgent';
+                    } else if (normalRadio.checked) {
+                        newPriority = 'normal';
+                    };
+                    let projectSelect = document.getElementById('edit-project-select');
+                    let projectOptions = projectSelect.children;
+                    for (let i = 0; i < projectOptions.length; i++) {
+                        if (projectOptions[i].selected) {
+                            newProjectTitle = projectOptions[i].value
+                        }
+                    };
+                    
+                    if (newTitle) {newValues.title = newTitle;};
+                    if (newDueDate) {newValues.dueDate = newDueDate;};
+                    if (newDescription) {newValues.description = newDescription;};
+                    if (newProjectTitle) { newValues.projectTitle = newProjectTitle}
+                    if (newPriority) { newValues.priority = newPriority};
+
+                    
+                    // update this task with the new values
+                    todoList[i] = editTodo(todoList[i], newValues);
+
+                    // reset form and refresh dashboard
+                    form.reset();
+                    let header = document.getElementById('header');
+                    if (header.innerText == 'Dashboard') {
+                        DisplayController.dashboard();
+                    } else if (header.innerText == "Tasks") {
+                        DisplayController.showTasksTab();
+                    } else {
+                        DisplayController.showProjectsTab();
+                    }
+                    });
+                    
+            });
+            
             deleteButton.addEventListener('click', function() {
-                console.log('The current TodoList: ' + todoList);
-                console.log('Delete button clicked for task: ' + todoList[i]['title']);
-                console.log('Deleting ' + todoList[i]['title'] + '...');
                 let thisTask = todoList[i];
                 deleteTodo(thisTask);
                 let parentRow = this.parentElement.parentElement.parentElement;
                 let thisRow = this.parentElement.parentElement
                 parentRow.removeChild(thisRow);
                 // refresh the tab
-                
             });
             
             
-            
+                
         };
 
     };
@@ -310,7 +379,62 @@ class DisplayController {
  
     };
 
+    static editTaskPanel(index) {
+        const container = document.getElementById('container');
+        // make div panel
+        const editTaskPanelDiv = document.createElement('div');
+        editTaskPanelDiv.setAttribute('id', 'edit-task-panel');
+        editTaskPanelDiv.classList.add('card');
+        // add header
+        const editTaskPanelHeader = document.createElement('h2');
+        editTaskPanelHeader.setAttribute('id', 'edit-task-panel-header');
+        editTaskPanelHeader.innerHTML = `Edit Task: <em>${todoList[index]['title']}</em>`
+        editTaskPanelDiv.appendChild(editTaskPanelHeader);
+        // add form
+        const editTaskForm = document.createElement('form');
+        editTaskForm.setAttribute('id', 'edit-task-form')
+        // form in HTML
+        const editTaskFormHTML = `
+        <div class="form-control">
+        <label for="edit-task-title">Title</label>
+        <input type="text" name="edit-task-title" id="edit-task-title" placeholder="${todoList[index]['title']}">
+        </div>
+        <div class="form-control">
+        <label for="edit-task-due-date">Due date</label>
+        <input type="date" name="edit-task-due-date" id="edit-task-due-date">
+        </div>
+        <div class="form-control">
+        <label for="edit-task-description">Description</label>
+        <textarea name="edit-task-description" id="edit-task-description" style="resize: none;" cols="30" rows="3" placeholder="Edit the description of your task"></textarea>
+        </div>
+        <div class="form-control">
+        <label for="project-select">Project</label>
+        <select name="project-select" id="edit-project-select">
 
+        </select>
+        </div>
+        <div class="form-control">
+        <label for="priority">Priority</label>
+        <span class="radios">
+            <input type="radio" name="priority" id="edit-urgent" value="Urgent"><label for="urgent">Urgent</label>
+            <input type="radio" name="priority" id="edit-noturgent" value="Not urgent"><label for="noturgent">Not urgent</label>
+        </span>
+        </div>
+
+        <div id="edit-task-buttons">
+            <span id="save-task-edit">
+                <input type="submit" value="Save" id="save-task-edit-btn">
+            </span>
+            <span id="cancel-task-edit">
+                <input type="reset" value="Cancel" id="cancel-task-edit-btn">
+            </span>
+        </div>
+        `;
+        editTaskForm.innerHTML = editTaskFormHTML;
+        editTaskPanelDiv.appendChild(editTaskForm);
+        
+        return editTaskPanelDiv;
+    }
 
     static showProjectsTab() {
         this.resetContent();

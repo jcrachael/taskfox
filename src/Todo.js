@@ -1,4 +1,4 @@
-const {format} = require('date-fns');
+import { Project, projectsList } from "./Project";
 
 const todoList = [];
 
@@ -53,6 +53,31 @@ function deleteTodo(Todo) {
     return
 }
 
+function editTodo(todo, newValues) {
+    
+    // remove project from old project list
+    for (let i = 0; i < projectsList.length; i++) {
+        if (projectsList[i]['title'] == todo.projectTitle);
+        projectsList[i].removeTask(todo);
+    }
+    console.log(newValues.projectTitle);
+    // check which values are included in the object
+    if (newValues.title) { todo.title = newValues.title; };
+    if (newValues.dueDate) { todo.dueDate = newValues.dueDate};
+    if (newValues.description) { todo.description = newValues.description};
+    if (newValues.projectTitle) {todo.project = newValues.projectTitle};
+    if (newValues.priority) {todo.priority = newValues.priority; todo.initialPriority = newValues.priority};
+    
+    // add project to correct new project list
+    for (let i = 0; i < projectsList.length; i++) {
+        if (projectsList[i]['title'] == todo.project) {
+            projectsList[i].addTask(todo);
+        }
+    };
+    console.log(todo['project']);
+    return todo
+}
+
 function displayTodos() {
     let taskList = [];
     for (let i = 0; i < todoList.length; i++) {
@@ -68,5 +93,5 @@ function getNumTodos() {
 
 
 
-export {Todo, todoList, createTodo, deleteTodo, displayTodos, getNumTodos}
+export {Todo, todoList, createTodo, editTodo, deleteTodo, displayTodos, getNumTodos}
 

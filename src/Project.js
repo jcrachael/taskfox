@@ -1,11 +1,11 @@
-const {format} = require('date-fns');
+
 
 const projectsList = [];
 
 class Project {
     constructor(title, description, dueDate) {
         this.title = title;
-        this.created = format(new Date(), 'dd.MM.yyyy');
+        this.created = new Date().toLocaleDateString('en-AU');
         this.dueDate = dueDate;
         this.description = description;
         this.todos = [];
@@ -14,6 +14,11 @@ class Project {
 
     addTask(task) {
         this.todos.push(task);
+        return this.todos;
+    }
+
+    removeTask(task) {
+        this.todos.pop(task);
         return this.todos;
     }
 
@@ -42,7 +47,7 @@ function getNumProjects() {
 
 
 
-export { createProject, displayProjects, getNumProjects, projectsList}
+export { Project, createProject, displayProjects, getNumProjects, projectsList}
 
 
 
