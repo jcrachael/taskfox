@@ -18,11 +18,11 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
     * edit a Project
     * toggle Project complete
     * delete a Project
-    * display all Projects in projectList array
     * check Project overdue status
     * set Project to overdue
     * check Todo overdue status
     * set Todo to overdue
+    * ~~display all Projects in projectList array~~ done
     * ~~make new Project~~ done 
     * ~~add Todo to Project.todos~~ done
     * ~~remove Todo from Project.todos~~ done
