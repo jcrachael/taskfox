@@ -17,6 +17,11 @@ class Todo {
         this.complete = false;
     }
 
+    updateProject(project) {
+        this.project = project.title;
+        return
+    }
+
     
 
     toggleCompleteStatus() {
@@ -75,12 +80,12 @@ function deleteTodo(Todo) {
 
 function editTodo(todo, newValues) {
     
-    // remove project from old project list
+    // remove task from old project list
     for (let i = 0; i < projectsList.length; i++) {
         if (projectsList[i]['title'] == todo.projectTitle);
         projectsList[i].removeTask(todo);
     }
-    console.log(newValues.projectTitle);
+    
     // check which values are included in the object
     if (newValues.title) { todo.title = newValues.title; };
     if (newValues.dueDate) { todo.dueDate = newValues.dueDate};
@@ -88,13 +93,13 @@ function editTodo(todo, newValues) {
     if (newValues.projectTitle) {todo.project = newValues.projectTitle};
     if (newValues.priority) {todo.priority = newValues.priority; todo.initialPriority = newValues.priority};
     
-    // add project to correct new project list
+    // add task to correct new project list
     for (let i = 0; i < projectsList.length; i++) {
         if (projectsList[i]['title'] == todo.project) {
             projectsList[i].addTask(todo);
         }
     };
-    console.log(todo['project']);
+
     return todo
 }
 

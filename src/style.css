@@ -842,35 +842,40 @@ div.todo-row:hover {
 }
 
 
-/* EDIT TASK PANEL, EXPAND PROJECT PANEL */
-#edit-task-panel, #expand-project-card {
+/* EDIT TASK PANEL, EDIT PROJECT PANEL */
+#edit-task-panel, #expand-project-card, #edit-project-panel {
     position: fixed;
     width: 500px;
     padding: 20px;
     left: calc(50% - 250px);
     top: calc(50% - 250px);
     color: #252733;
+    box-shadow: 0px 0px 60px 20px rgba(0, 0, 0, 0.15);
 }
 
-#edit-task-panel-header, .expand-project-title {
+#edit-task-panel-header, .expand-project-title, #edit-project-panel-header {
     font-size: 16pt;
     margin: 10px 0px;
 }
+
 
 .expand-project-title {
     font-weight: bold;
 }
 
-#edit-task-form {
+#edit-task-form, #edit-project-form {
     padding: 20px 0px;
 }
 
-#edit-task-form > .form-control {
+#edit-task-form > .form-control,
+#edit-project-form > .form-control {
     display: flex;
     padding: 5px 0px;
 }
 
-#edit-task-form > .form-control > label {
+#edit-task-form > .form-control > label,
+#edit-project-form > .form-control > label,
+legend.edit-project-tasks {
     width: 100px;
     font-size: 10pt;
     font-weight: bold;
@@ -878,9 +883,86 @@ div.todo-row:hover {
     margin-right: 20px;
 }
 
+#edit-projects-checkbox-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.checkbox-container {
+    display: flex;
+    padding: 5px 0px;
+    font-size: 10pt;
+    height: 35px;
+}
+
+
+.checkbox-container > input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    margin-right: 10px;
+    font: inherit;
+    color: #ED533E;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #DFE0EB;
+    border-radius: 1em;
+    transform: translateY(-0.15em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.checkbox-container > input[type="checkbox"]::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ED533E;
+    transform-origin: bottom left;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.checkbox-container > input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.checkbox-container > input[type="checkbox"]:focus {
+    outline: max(1px, 0.15em) solid #ED533E;
+}
+
+.checkbox-container > input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+
+.checkbox-container > label {
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+span.note, p.how-to {
+    font-size: 10pt;
+    color: #969599;
+}
+
+p.how-to {
+    margin-top: 10px
+}
+
+
+
+
 #edit-task-form > .form-control > input, 
 #edit-task-form > .form-control > textarea,
-#edit-task-form > .form-control > select {
+#edit-task-form > .form-control > select,
+#edit-project-form > .form-control > input, 
+#edit-project-form > .form-control > textarea,
+#edit-project-form > .form-control > select {
     padding: 10px 5px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -888,26 +970,31 @@ div.todo-row:hover {
     width: 100%;
 }
 
-#edit-task-form > .form-control > .radios {
+#edit-task-form > .form-control > .radios,
+#edit-project-form > .form-control > .radios {
     padding: 10px 5px;
     margin-bottom: 20px;
     width: 100%;
 }
 
 
-#edit-task-form > .form-control, #edit-task-buttons {
+#edit-task-form > .form-control, 
+#edit-task-buttons,
+#edit-project-buttons {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#save-task-edit, #cancel-task-edit {
+#save-task-edit, #cancel-task-edit,
+#save-project-edit, #cancel-project-edit {
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-#save-task-edit-btn, #cancel-task-edit-btn {
+#save-task-edit-btn, #cancel-task-edit-btn,
+#save-project-edit-btn, #cancel-project-edit-btn {
     width: 80%;
     padding: 10px;
     font-weight: bold;

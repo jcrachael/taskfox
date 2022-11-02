@@ -17,7 +17,12 @@ class Project {
         return this.todos;
     }
 
-
+    removeTask(todo) {
+        const index = this.todos.indexOf(todo);
+        if (index > -1) {
+            this.todos.splice(index, 1);
+        }
+    }
 
     getNumTodosInProject() {
         return this.todos.length;
@@ -48,6 +53,16 @@ function deleteProject(Project) {
     Project = null;
 }
 
+function editProject(project, newValues) {
+    console.log('New values: ' + newValues);
+    if (newValues.title) {project.title = newValues.title};
+    if (newValues.dueDate) {project.dueDate = newValues.dueDate};
+    if (newValues.description) {project.description = newValues.description};
+    project.todos = newValues.todos;
+
+    return project;
+
+}
 
 function displayProjects() {
     return projectsList
@@ -60,7 +75,7 @@ function getNumProjects() {
 
 
 
-export { Project, createProject, deleteProject, displayProjects, getNumProjects, projectsList}
+export { Project, createProject, deleteProject, editProject, displayProjects, getNumProjects, projectsList}
 
 
 

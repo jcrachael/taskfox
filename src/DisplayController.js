@@ -11,7 +11,7 @@ import idea from './assets/idea.png';
 
 // JS module imports
 import { todoList, createTodo, displayTodos, deleteTodo, editTodo, getNumTodos} from "./Todo";
-import { createProject, getNumProjects, deleteProject, Project, projectsList } from './Project';
+import { createProject, getNumProjects, editProject, deleteProject, Project, projectsList } from './Project';
 
 class DisplayController {
     constructor(){};
@@ -278,7 +278,9 @@ class DisplayController {
             editButton.addEventListener('click', function() {
                 let container = document.getElementById('container');
                 let oldPanel = document.getElementById('edit-task-panel');
-                if (oldPanel) {container.removeChild(oldPanel);}
+                if (oldPanel) {container.removeChild(oldPanel);};
+                const modal = document.getElementById('misc-modal');
+                modal.classList.remove('modal-hidden');
                 let index = i;
                 // build the form
                 let editTaskDisplay = DisplayController.editTaskPanel(index);
@@ -299,6 +301,7 @@ class DisplayController {
                 // add event listener to cancel button: hide the panel
                 let cancelEditButton = document.getElementById('cancel-task-edit-btn');
                 cancelEditButton.addEventListener('click', function() {
+                    modal.classList.add('modal-hidden');
                     editTaskDisplay.classList.add('hidden');
                 });
 
@@ -308,6 +311,7 @@ class DisplayController {
                     // prevent default event and hide panel
                     e.preventDefault();
                     editTaskDisplay.classList.add('hidden');
+                    modal.classList.add('modal-hidden');
                     // get info from fields with input
                     let newValues = {};
                     let newTitle = document.getElementById('edit-task-title').value;
@@ -324,6 +328,7 @@ class DisplayController {
                     };
                     let projectSelect = document.getElementById('edit-project-select');
                     let projectOptions = projectSelect.children;
+
                     for (let i = 0; i < projectOptions.length; i++) {
                         if (projectOptions[i].selected) {
                             newProjectTitle = projectOptions[i].value
@@ -351,6 +356,8 @@ class DisplayController {
                         DisplayController.showProjectsTab();
                     }
                 });
+
+
                     
             });
             
@@ -439,6 +446,53 @@ class DisplayController {
         return editTaskPanelDiv;
     };
 
+    static editProjectPanel(index) {
+        // make div panel
+        const div = document.createElement('div');
+        div.setAttribute('id', 'edit-project-panel');
+        div.classList.add('card');
+        // add header
+        const header = document.createElement('h2');
+        header.setAttribute('id', 'edit-project-panel-header');
+        header.innerHTML = `Edit Project: <em>${projectsList[index]['title']}</em>`
+        div.appendChild(header);
+        // add form
+        const form = document.createElement('form');
+        form.setAttribute('id', 'edit-project-form')
+        // form in HTML
+        const formHTML = `
+        <div class="form-control">
+        <label for="edit-project-title">Title</label>
+        <input type="text" name="edit-project-title" id="edit-project-title" placeholder="${projectsList[index]['title']}">
+        </div>
+        <div class="form-control">
+        <label for="edit-project-due-date">Due date</label>
+        <input type="date" name="edit-project-due-date" id="edit-project-due-date">
+        </div>
+        <div class="form-control">
+        <label for="edit-project-description">Description</label>
+        <textarea name="edit-project-description" id="edit-project-description" style="resize: none;" cols="30" rows="3" placeholder="Edit the description of your project"></textarea>
+        </div>
+        <div class="form-control">
+            <legend class="edit-project-tasks">Tasks</legend>
+            <div id="edit-projects-checkbox-container">
+                
+            </div>
+        </div>
+        <div id="edit-project-buttons">
+            <span id="save-project-edit">
+                <input type="submit" value="Save" id="save-project-edit-btn">
+            </span>
+            <span id="cancel-project-edit">
+                <input type="reset" value="Cancel" id="cancel-project-edit-btn">
+            </span>
+        </div>
+        `;
+        form.innerHTML = formHTML;
+        div.appendChild(form);    
+        return div;
+    }
+
     static buildProjectCard(index) {
         const contentContainer = document.getElementById('content');
         // build a card
@@ -462,11 +516,11 @@ class DisplayController {
         cardHeader.appendChild(cardLinks);
         const expandLink = document.createElement('p');
         expandLink.classList.add('expand-project-link');
-        expandLink.setAttribute('id', 'expand-project-' + projectsList[index]);
+        expandLink.setAttribute('id', 'expand-project-' + index);
         expandLink.innerText = 'Expand';
         const editLink = document.createElement('p');
         editLink.classList.add('edit-project-link');
-        editLink.setAttribute('id', 'edit-project-' + projectsList[index]);
+        editLink.setAttribute('id', 'edit-project-' + index);
         editLink.innerText = 'Edit';
         cardLinks.appendChild(expandLink);
         cardLinks.appendChild(editLink);
@@ -476,7 +530,8 @@ class DisplayController {
             let container = document.getElementById('container');
             let oldPanel = document.getElementById('expand-project-card');
             if (oldPanel) {container.removeChild(oldPanel);}
-
+            const modal = document.getElementById('misc-modal');
+            modal.classList.remove('modal-hidden');
             // build the panel
             let expandProjectDisplay = DisplayController.expandProjectDisplay(index);
             
@@ -487,6 +542,7 @@ class DisplayController {
             const closePanel = document.getElementById('close-project-panel-btn');
             closePanel.addEventListener('click', function() {
                 container.removeChild(expandProjectDisplay);
+                modal.classList.add('modal-hidden');
             });
 
             // event listener for the "Mark all complete" button
@@ -502,6 +558,7 @@ class DisplayController {
                 }
                 // refresh the page
                 container.removeChild(expandProjectDisplay);
+                modal.classList.add('modal-hidden');
                 DisplayController.resetContent();
                 DisplayController.showProjectsTab();
             });
@@ -509,7 +566,111 @@ class DisplayController {
             // event listener for 'edit project' button
             const editProjectButton = document.getElementById('edit-project-btn');
             editProjectButton.addEventListener('click', function() {
-                console.log('Edit project button pressed.')
+                // open the Edit Project panel
+
+                container.removeChild(expandProjectDisplay);
+                let editProjectPanel = DisplayController.editProjectPanel(index);
+                container.appendChild(editProjectPanel);
+
+                // get the form
+                const editProjectForm = document.getElementById('edit-project-form');
+                
+                
+                 // Populate Tasks checkboxes:
+                // get input container and reset to clear
+                const inputContainer = document.getElementById('edit-projects-checkbox-container');
+                inputContainer.innerHTML = '';
+                // get the tasks in this project's todos
+                let thisProject = projectsList[index];
+                let todos = thisProject.todos;
+                
+                for (let i = 0; i < todos.length; i++) {
+                    let thisTask = todos[i];
+                    // make the checkbox container
+                    let checkboxContainer = document.createElement('div');
+                    checkboxContainer.classList.add('checkbox-container');
+                    checkboxContainer.setAttribute('id', 'task-' + i + '-container');
+                    inputContainer.appendChild(checkboxContainer);
+                    // make the input element
+                    let input = document.createElement('input');
+                    input.setAttribute('type', 'checkbox');
+                    input.setAttribute('id', 'checkbox-task-' + i);
+                    input.setAttribute('name', 'task-' + i);
+                    input.setAttribute('value', thisTask['title']);
+                    checkboxContainer.appendChild(input);
+                    // make the label
+                    let label = document.createElement('label');
+                    label.setAttribute('for', 'task-' + i);
+                    label.innerText = thisTask['title'];
+                    checkboxContainer.appendChild(label);
+                    let note = document.createElement('span');
+                    note.classList.add('note');
+                    note.setAttribute('id', 'task-' + i + '-note') ;
+                    checkboxContainer.appendChild(note);
+                    // check if this Task completed
+                    if (thisTask.complete) {
+                        note.innerText = 'Complete';
+                    };
+                    if (!thisTask.complete) {
+                        note.innerText = 'Due ' + thisTask['dueDate'];
+                    };              
+                };
+
+                let instruction = document.createElement('p');
+                    instruction.classList.add('how-to');
+                    instruction.innerText = "Select a task to remove it from this project"
+                    inputContainer.appendChild(instruction);
+                
+
+                // add event listener to Cancel button
+                const deletebtn = document.getElementById('cancel-project-edit-btn');
+                deletebtn.addEventListener('click', function() {
+                    editProjectForm.reset();
+                    container.removeChild(editProjectPanel);
+                    modal.classList.add('modal-hidden');
+                });
+
+                // add event listener to Save button
+                const saveBtn = document.getElementById('save-project-edit-btn');
+                saveBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    let newValues = {};
+                    let newTitle = document.getElementById('edit-project-title').value;
+                    let newDueDate = document.getElementById('edit-project-due-date').value;
+                    let newDescription = document.getElementById('edit-project-description').value;
+                    let newTodos = todos;
+            
+                    for (let i = 0; i < todos.length; i++) {
+                        let thisTodo = todos[i];
+                    
+                        let thisCheckbox = document.getElementById('checkbox-task-' + i);
+
+                        if (thisCheckbox.checked === true) {
+                            console.log('Checkbox ' + i + ' was checked');
+                            console.log('Please remove task index ' + i + ' from this project\'s todos')
+                            newTodos.splice(i, 1);
+                            console.log('New todos array with task index ' + i + ' removed: ' + newTodos);
+                            thisTodo.project = '';
+                        };
+                    };
+                    
+                    if (newTitle) {newValues.title = newTitle};
+                    if (newDueDate) {newValues.dueDate = newDueDate};
+                    if (newDescription) {newValues.description = newDescription};
+                    newValues.todos = newTodos;
+                    thisProject = editProject(thisProject, newValues);
+                    editProjectForm.reset();
+                    DisplayController.resetContent();
+                    DisplayController.showProjectsTab();
+                    container.removeChild(editProjectPanel);
+                    modal.classList.add('modal-hidden');
+                
+                });
+                
+
+
+                
             });
 
             // event listener for 'delete project' button
@@ -519,17 +680,119 @@ class DisplayController {
                 DisplayController.resetContent();
                 DisplayController.showProjectsTab();
                 container.removeChild(expandProjectDisplay);
+                modal.classList.add('modal-hidden');
             })
         });
 
         editLink.addEventListener('click', function() {
-            console.log("Edit project button clicked");
             // clear the panels
+            // remove any old panel
+            let container = document.getElementById('container');
+            let oldPanel = document.getElementById('expand-project-card');
+            if (oldPanel) {container.removeChild(oldPanel);};
+            const modal = document.getElementById('misc-modal');
+            modal.classList.remove('modal-hidden');
+            // build the "Edit Project" form
+            let editProjectPanel = DisplayController.editProjectPanel(index);
+            // add form to display
+            container.appendChild(editProjectPanel);
+            // save form as a variable
+            const editProjectForm = document.getElementById('edit-project-form');
+            
+            // Populate Tasks checkboxes:
+            // get input container and reset to clear
+            const inputContainer = document.getElementById('edit-projects-checkbox-container');
+            inputContainer.innerHTML = '';
+            // get the tasks in this project's todos
+            let thisProject = projectsList[index];
+            let todos = thisProject.todos;
+            
+            for (let i = 0; i < todos.length; i++) {
+                let thisTask = todos[i];
+                // make the checkbox container
+                let checkboxContainer = document.createElement('div');
+                checkboxContainer.classList.add('checkbox-container');
+                checkboxContainer.setAttribute('id', 'task-' + i + '-container');
+                inputContainer.appendChild(checkboxContainer);
+                // make the input element
+                let input = document.createElement('input');
+                input.setAttribute('type', 'checkbox');
+                input.setAttribute('id', 'checkbox-task-' + i);
+                input.setAttribute('name', 'task-' + i);
+                input.setAttribute('value', thisTask['title']);
+                checkboxContainer.appendChild(input);
+                // make the label
+                let label = document.createElement('label');
+                label.setAttribute('for', 'task-' + i);
+                label.innerText = thisTask['title'];
+                checkboxContainer.appendChild(label);
+                let note = document.createElement('span');
+                note.classList.add('note');
+                note.setAttribute('id', 'task-' + i + '-note') ;
+                checkboxContainer.appendChild(note);
+                // check if this Task completed
+                if (thisTask.complete) {
+                    note.innerText = 'Complete';
+                };
+                if (!thisTask.complete) {
+                    note.innerText = 'Due ' + thisTask['dueDate'];
+                };              
+            };
 
-            // built the "Edit Project" form
+            let instruction = document.createElement('p');
+                instruction.classList.add('how-to');
+                instruction.innerText = "Select a task to remove it from this project"
+                inputContainer.appendChild(instruction);
+            
 
+            // add event listener to Cancel button
+            const deletebtn = document.getElementById('cancel-project-edit-btn');
+            deletebtn.addEventListener('click', function() {
+                editProjectForm.reset();
+                container.removeChild(editProjectPanel);
+                modal.classList.add('modal-hidden');
+            });
+
+            // add event listener to Save button
+            const saveBtn = document.getElementById('save-project-edit-btn');
+            saveBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                let newValues = {};
+                let newTitle = document.getElementById('edit-project-title').value;
+                let newDueDate = document.getElementById('edit-project-due-date').value;
+                let newDescription = document.getElementById('edit-project-description').value;
+                let newTodos = todos;
+        
+                for (let i = 0; i < todos.length; i++) {
+                    let thisTodo = todos[i];
+                   
+                    let thisCheckbox = document.getElementById('checkbox-task-' + i);
+
+                    if (thisCheckbox.checked === true) {
+                        console.log('Checkbox ' + i + ' was checked');
+                        console.log('Please remove task index ' + i + ' from this project\'s todos')
+                        newTodos.splice(i, 1);
+                        console.log('New todos array with task index ' + i + ' removed: ' + newTodos);
+                        thisTodo.project = '';
+                    };
+                };
+                
+                if (newTitle) {newValues.title = newTitle};
+                if (newDueDate) {newValues.dueDate = newDueDate};
+                if (newDescription) {newValues.description = newDescription};
+                newValues.todos = newTodos;
+                thisProject = editProject(thisProject, newValues);
+                editProjectForm.reset();
+                DisplayController.resetContent();
+                DisplayController.showProjectsTab();
+                container.removeChild(editProjectPanel);
+                modal.classList.add('modal-hidden');
+            });
 
         });
+
+        
         
         // card subtitle
         const cardSubtitle = document.createElement('div');
@@ -765,9 +1028,7 @@ class DisplayController {
         // for each Project
         for (let i = 0; i < projectsList.length; i++) {
             // build a card
-            this.buildProjectCard(i);
-
-            
+            this.buildProjectCard(i); 
         };
     };   
 
