@@ -22,7 +22,7 @@ module.exports = {
     },
 
     // dev server
-    devtool: 'source-map',
+
     devServer: {
         static: {
             directory: path.resolve(__dirname, 'dist')

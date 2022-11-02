@@ -384,7 +384,6 @@ class DisplayController {
     };
 
     static editTaskPanel(index) {
-        const container = document.getElementById('container');
         // make div panel
         const editTaskPanelDiv = document.createElement('div');
         editTaskPanelDiv.setAttribute('id', 'edit-task-panel');
@@ -473,11 +472,62 @@ class DisplayController {
         cardLinks.appendChild(editLink);
         // add event listeners to card links
         expandLink.addEventListener('click', function() {
-            console.log("Expand project button clicked");
+            // remove any old panel
+            let container = document.getElementById('container');
+            let oldPanel = document.getElementById('expand-project-card');
+            if (oldPanel) {container.removeChild(oldPanel);}
+
+            // build the panel
+            let expandProjectDisplay = DisplayController.expandProjectDisplay(index);
+            
+            // add form to panel
+            container.appendChild(expandProjectDisplay);
+
+            // event listener for close panel link
+            const closePanel = document.getElementById('close-project-panel-btn');
+            closePanel.addEventListener('click', function() {
+                container.removeChild(expandProjectDisplay);
+            });
+
+            // event listener for the "Mark all complete" button
+            const markAllComplete = document.getElementById('mark-all-complete-btn');
+            markAllComplete.addEventListener('click', function() {
+         
+                // get all todos in this project's todo list
+                let thisProjectTodos = projectsList[index]['todos']
+                for (let i = 0; i < thisProjectTodos.length; i++) {
+                    if (thisProjectTodos[i]['complete'] == false) {
+                        thisProjectTodos[i].toggleCompleteStatus();
+                    }
+                }
+                // refresh the page
+                container.removeChild(expandProjectDisplay);
+                DisplayController.resetContent();
+                DisplayController.showProjectsTab();
+            });
+
+            // event listener for 'edit project' button
+            const editProjectButton = document.getElementById('edit-project-btn');
+            editProjectButton.addEventListener('click', function() {
+                console.log('Edit project button pressed.')
+            });
+
+            // event listener for 'delete project' button
+            const deleteProjectButton = document.getElementById('delete-project-btn');
+            deleteProjectButton.addEventListener('click', function() {
+                console.log('Delete button pressed.')
+            })
         });
+
         editLink.addEventListener('click', function() {
             console.log("Edit project button clicked");
+            // clear the panels
+
+            // built the "Edit Project" form
+
+
         });
+        
         // card subtitle
         const cardSubtitle = document.createElement('div');
         cardSubtitle.classList.add('project-card-subtitle');
@@ -548,6 +598,157 @@ class DisplayController {
             
         };
         
+    };
+
+    static expandProjectDisplay(index) {
+        
+        // make the div card panel
+        const expandProjectPanel = document.createElement('div');
+        expandProjectPanel.setAttribute('id', 'expand-project-card');
+        expandProjectPanel.setAttribute('data-index-number', index);
+        expandProjectPanel.classList.add('card');
+
+        // make the title container
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('expand-project-title-container');
+        expandProjectPanel.appendChild(titleContainer);
+
+        // make the title
+        const titleRow = document.createElement('div');
+        titleRow.classList.add('expand-project-title-row');
+        titleContainer.appendChild(titleRow);
+        const title = document.createElement('p');
+        title.classList.add('expand-project-title');
+        title.innerText = projectsList[index]['title'];
+        titleRow.appendChild(title);
+
+        const closePanel = document.createElement('p');
+        closePanel.classList.add('close-panel-btn');
+        closePanel.setAttribute('id', 'close-project-panel-btn');
+        closePanel.innerText = 'x';
+
+        titleRow.appendChild(closePanel);
+
+        // make the subtitle
+        const subtitleContainer = document.createElement('div');
+        subtitleContainer.classList.add('expand-project-subtitle-container');
+        titleContainer.appendChild(subtitleContainer);
+        const createdContainer = document.createElement('div');
+        createdContainer.classList.add('date-container');
+        subtitleContainer.appendChild(createdContainer);
+        const created = document.createElement('p');
+        created.classList.add('project-subtitle-bold');
+        created.innerText = 'Created:';
+        createdContainer.appendChild(created);
+        const createdDate = document.createElement('p');
+        createdDate.classList.add('project-subtitle-light');
+        createdDate.innerText = projectsList[index]['created'];
+        createdContainer.appendChild(createdDate);
+        const dueContainer = document.createElement('div');
+        dueContainer.classList.add('date-container');
+        subtitleContainer.appendChild(dueContainer);
+        const due = document.createElement('p');
+        due.classList.add('project-subtitle-bold');
+        due.innerText = 'Due:';
+        dueContainer.appendChild(due);
+        const dueDate = document.createElement('p');
+        dueDate.classList.add('project-subtitle-light');
+        dueDate.innerText = projectsList[index]['dueDate'];
+        dueContainer.appendChild(dueDate);
+        const description = document.createElement('p');
+        description.classList.add('expand-project-description');
+        description.classList.add('project-subtitle-light');
+        description.innerText = projectsList[index]['description'];
+        titleContainer.appendChild(description);
+
+        // make the tasks container
+        const tasksContainer = document.createElement('div');
+        tasksContainer.classList.add('expand-project-tasks-container');
+        expandProjectPanel.appendChild(tasksContainer);
+        const tasksHeader = document.createElement('p');
+        tasksHeader.classList.add('expand-project-tasks');
+        tasksHeader.innerText = 'Tasks';
+        tasksContainer.appendChild(tasksHeader);
+
+        for (let i = 0; i < projectsList[index]['todos'].length; i++) {
+            // make the row 
+            const todoRow = document.createElement('div');
+            todoRow.classList.add('expand-project-task-row');
+            todoRow.setAttribute('data-task-index', i);
+            
+            // make the checkbox+title container
+            const checkTitleContainer = document.createElement('div');
+            checkTitleContainer.classList.add('check-title-container');
+            todoRow.appendChild(checkTitleContainer);
+            // add the checkbox
+            const checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.setAttribute('id', `checkbox-for-project-todo-${index}`);
+            checkTitleContainer.appendChild(checkbox);
+            // add the title
+            const todoTitle = document.createElement('p');
+            todoTitle.classList.add('project-card-task-title');
+            todoTitle.innerText = projectsList[index]['todos'][i]['title'];
+            checkTitleContainer.appendChild(todoTitle);
+            // add the priority
+            const todoPriority = document.createElement('div');
+            todoPriority.classList.add('task-urgency');
+            todoPriority.innerText = projectsList[index]['todos'][i]['priority'];
+            todoPriority.classList.add(projectsList[index]['todos'][i]['priority']);
+            todoRow.appendChild(todoPriority);
+            // append to project card
+            tasksContainer.appendChild(todoRow);
+            // toggle complete checkbox
+            if (todoPriority.classList.contains('complete')) {
+                checkbox.checked = true;
+            }
+            // add event listener to checkbox
+            checkbox.addEventListener('click', function() {
+                // toggle complete status of this todo
+                projectsList[index]['todos'][i].toggleCompleteStatus();
+                todoPriority.innerText = projectsList[index]['todos'][i]['priority'];
+                if (projectsList[index]['todos'][i]['complete'] === true) {
+                    todoPriority.classList.add('complete');
+                    todoRow.classList.add('complete');
+                } else if (projectsList[index]['todos'][i]['complete'] === false) {
+                    todoPriority.classList.remove('complete');
+                    todoRow.classList.remove('complete');
+                    todoPriority.classList.add(projectsList[index]['todos'][i]['priority']);
+                    todoPriority.innerText = projectsList[index]['todos'][i]['initialPriority'];
+                };
+                DisplayController.resetContent();
+                DisplayController.showProjectsTab();
+            }); 
+        }
+
+        // make the buttons container
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.classList.add('expand-project-buttons-container');
+        expandProjectPanel.appendChild(buttonsContainer);
+
+        // make the mark all tasks complete button
+        const markAllComplete = document.createElement('button');
+        markAllComplete.classList.add('mark-all-complete');
+        markAllComplete.setAttribute('id', 'mark-all-complete-btn');
+        markAllComplete.innerText = 'Mark all complete';
+        buttonsContainer.appendChild(markAllComplete);
+
+        // make the edit project button
+        const editProjectButton = document.createElement('button');
+        editProjectButton.classList.add('edit-project');
+        editProjectButton.setAttribute('id', 'edit-project-btn');
+        editProjectButton.innerText = 'Edit project';
+        buttonsContainer.appendChild(editProjectButton);
+
+        // make the delete project button
+        const deleteProjectButton = document.createElement('button');
+        deleteProjectButton.classList.add('delete-project');
+        deleteProjectButton.setAttribute('id', 'delete-project-btn');
+        deleteProjectButton.innerText = 'Delete project';
+        buttonsContainer.appendChild(deleteProjectButton);
+
+        return expandProjectPanel;
+
     }
 
     static showProjectsTab() {
@@ -562,6 +763,8 @@ class DisplayController {
         for (let i = 0; i < projectsList.length; i++) {
             // build a card
             this.buildProjectCard(i);
+
+            
         };
     };   
 
