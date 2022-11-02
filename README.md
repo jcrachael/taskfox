@@ -15,11 +15,11 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
 * Actions:
     * edit a Project
     * toggle Project complete
-    * delete a Project
     * check Project overdue status
     * set Project to overdue
     * check Todo overdue status
     * set Todo to overdue
+    * ~~delete a Project~~ done
     * ~~display one Project~~ done
     * ~~display all Projects in projectList array~~ done
     * ~~make new Project~~ done 

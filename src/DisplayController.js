@@ -11,7 +11,7 @@ import idea from './assets/idea.png';
 
 // JS module imports
 import { todoList, createTodo, displayTodos, deleteTodo, editTodo, getNumTodos} from "./Todo";
-import { createProject, getNumProjects, projectsList } from './Project';
+import { createProject, getNumProjects, deleteProject, Project, projectsList } from './Project';
 
 class DisplayController {
     constructor(){};
@@ -515,7 +515,10 @@ class DisplayController {
             // event listener for 'delete project' button
             const deleteProjectButton = document.getElementById('delete-project-btn');
             deleteProjectButton.addEventListener('click', function() {
-                console.log('Delete button pressed.')
+                deleteProject(projectsList[index]);
+                DisplayController.resetContent();
+                DisplayController.showProjectsTab();
+                container.removeChild(expandProjectDisplay);
             })
         });
 
