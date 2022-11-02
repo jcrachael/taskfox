@@ -487,7 +487,129 @@ input[type="radio"] {
     font-size: 10pt;
 }
 
+/* PROJECTS TAB */
 
+.project-card {
+    padding: 20px;
+}
+
+.project-card-header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.project-card-title {
+    font-weight: bold;
+    font-size: 14pt;
+    color: #26242E;
+    padding-bottom: 10px;
+}
+
+.project-card-links {
+    font-size: 10pt;
+    display: flex;
+    justify-content: flex-end;
+ 
+}
+
+.project-card-links > p {
+    color: #ED533E;
+    cursor: pointer;
+}
+
+.project-card-links > p:hover {
+    text-decoration: underline;
+}
+
+.expand-project-link {
+    padding-right: 5px;
+    height: 12pt;
+    border-right: 1px #C5C7CD solid;
+}
+
+.edit-project-link {
+    padding-left: 5px;
+}
+
+.project-card-subtitle {
+    grid-column: 1/3;
+    display: flex;
+    font-size: 10pt;
+    padding-bottom: 10px;
+}
+
+.project-subtitle-bold {
+    font-weight: bold;
+    padding-right: 10px;
+    color: #26242E;
+}
+
+.project-subtitle-light {
+    color: #C5C7CD;
+}
+
+.project-card-task-row {
+    border-bottom: 1px #C5C7CD solid;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+
+.check-title-container {
+    display: flex;
+}
+
+.project-card-task-row input {
+    margin-right: 20px;
+}
+
+.project-card-task-title {
+    font-weight: 500;
+}
+
+.project-card-task-row > .normal {
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    background-color: #F0F1F7;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #9FA2B4;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.project-card-task-row > .urgent {
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    background-color: #ED533E;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.project-card-task-row > .complete {
+    background-color: #8bc34a;
+    color: #fff;
+    width: 100px;
+    min-width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 4px;
+}
 
 /* TASKS TAB */
 /* content grid:

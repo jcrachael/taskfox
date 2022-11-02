@@ -12,7 +12,8 @@ import { createTodo } from './Todo';
 // Generate a new defaultProject object
 const defaultProjectTitle = 'My First Project';
 const defaultProjectDescription = 'My first project description goes here.';
-const defaultProject = createProject(defaultProjectTitle, defaultProjectDescription);
+const defaultProjectDueDate = new Date(2023, 5, 1).toLocaleDateString('en-AU');
+const defaultProject = createProject(defaultProjectTitle, defaultProjectDescription, defaultProjectDueDate);
 
 // Generate new defaultTodo object
 const defaultTodoTitle = 'My First Task';

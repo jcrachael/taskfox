@@ -46,11 +46,23 @@ function createTodo(title, description, dueDate, project, priority) {
 }
 
 function deleteTodo(Todo) {
-    
+    // remove task from todoList
     const index = todoList.indexOf(Todo);
     if (index > -1) {
         todoList.splice(index, 1)
     }
+    // remove task from its Project.todos
+    // get the project title
+    const thisTaskProjectTitle = Todo.project;
+    let thisTaskProject = undefined;
+    // find the corresponding project in the projectList
+    for (let i = 0; i < projectsList.length; i++) {
+        if (thisTaskProjectTitle == projectsList[i]['title']) {
+            thisTaskProject = projectsList[i];
+        }
+    };
+    const todoIndex = thisTaskProject['todos'].indexOf(Todo);
+    thisTaskProject['todos'].splice(todoIndex, 1);
     Todo = null;
     return
 }

@@ -28,6 +28,7 @@ class Project {
 }
 
 function createProject(title, description, dueDate) {
+    dueDate = dueDate;
     const newProject = new Project(title, description, dueDate);
     projectsList.push(newProject);
     return newProject;
@@ -35,9 +36,7 @@ function createProject(title, description, dueDate) {
 
 
 function displayProjects() {
-    for (let i = 0; i < projectsList.length; i++) {
-        return projectsList[i]['title'];
-    }
+    return projectsList
 };
 
 function getNumProjects() {

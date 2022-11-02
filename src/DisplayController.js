@@ -20,7 +20,7 @@ class DisplayController {
         // reset content
         const content = document.getElementById('content');
         content.innerHTML = '';
-    }
+    };
 
     static buildTasksCard() {
         // header row
@@ -438,6 +438,116 @@ class DisplayController {
         editTaskPanelDiv.appendChild(editTaskForm);
         
         return editTaskPanelDiv;
+    };
+
+    static buildProjectCard(index) {
+        const contentContainer = document.getElementById('content');
+        // build a card
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.classList.add('project-card');
+        card.setAttribute('id', 'project-card-' + index);
+        contentContainer.appendChild(card);
+        // card header div
+        const cardHeader = document.createElement('div');
+        cardHeader.classList.add('project-card-header');
+        card.appendChild(cardHeader);
+        // card title
+        const cardTitle = document.createElement('p');
+        cardTitle.classList.add('project-card-title');
+        cardTitle.innerText = projectsList[index]['title'];
+        cardHeader.appendChild(cardTitle);
+        // card links
+        const cardLinks = document.createElement('span');
+        cardLinks.classList.add('project-card-links');
+        cardHeader.appendChild(cardLinks);
+        const expandLink = document.createElement('p');
+        expandLink.classList.add('expand-project-link');
+        expandLink.setAttribute('id', 'expand-project-' + projectsList[index]);
+        expandLink.innerText = 'Expand';
+        const editLink = document.createElement('p');
+        editLink.classList.add('edit-project-link');
+        editLink.setAttribute('id', 'edit-project-' + projectsList[index]);
+        editLink.innerText = 'Edit';
+        cardLinks.appendChild(expandLink);
+        cardLinks.appendChild(editLink);
+        // add event listeners to card links
+        expandLink.addEventListener('click', function() {
+            console.log("Expand project button clicked");
+        });
+        editLink.addEventListener('click', function() {
+            console.log("Edit project button clicked");
+        });
+        // card subtitle
+        const cardSubtitle = document.createElement('div');
+        cardSubtitle.classList.add('project-card-subtitle');
+        cardHeader.appendChild(cardSubtitle);
+        const subtitleDue = document.createElement('p');
+        subtitleDue.classList.add('project-subtitle-bold');
+        subtitleDue.innerText = 'Due:';
+        cardSubtitle.appendChild(subtitleDue);
+        const subtitleDate = document.createElement('p');
+        subtitleDate.classList.add('project-subtitle-light');
+        subtitleDate.innerText = projectsList[index]['dueDate'];
+        cardSubtitle.appendChild(subtitleDate);
+        // task row
+        // for each todo in the project's list of todos
+        for (let i = 0; i < projectsList[index]['todos'].length; i++) {
+
+            // make the row 
+            const todoRow = document.createElement('div');
+            todoRow.classList.add('project-card-task-row');
+            // make the checkbox+title container
+            const checkTitleContainer = document.createElement('div');
+            checkTitleContainer.classList.add('check-title-container');
+            todoRow.appendChild(checkTitleContainer);
+            // add the checkbox
+            const checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.setAttribute('id', `checkbox-for-task-${i}`);
+            checkTitleContainer.appendChild(checkbox);
+            // add the title
+            const todoTitle = document.createElement('p');
+            todoTitle.classList.add('project-card-task-title');
+            todoTitle.innerText = projectsList[index]['todos'][i]['title'];
+            checkTitleContainer.appendChild(todoTitle);
+            // add the priority
+            const todoPriority = document.createElement('div');
+            todoPriority.classList.add('task-urgency');
+            todoPriority.innerText = projectsList[index]['todos'][i]['priority'];
+            todoPriority.classList.add(projectsList[index]['todos'][i]['priority']);
+            todoRow.appendChild(todoPriority);
+            // append to project card
+            card.appendChild(todoRow);
+            
+            // toggle complete checkbox
+            
+            if (todoPriority.classList.contains('complete')) {
+                checkbox.checked = true;
+            }
+
+            // add event listener to checkbox
+            checkbox.addEventListener('click', function() {
+                // toggle complete status of this todo
+
+                projectsList[index]['todos'][i].toggleCompleteStatus();
+                todoPriority.innerText = projectsList[index]['todos'][i]['priority'];
+                if (projectsList[index]['todos'][i]['complete'] === true) {
+                    todoPriority.classList.add('complete');
+                    todoRow.classList.add('complete');
+                } else if (projectsList[index]['todos'][i]['complete'] === false) {
+                    todoPriority.classList.remove('complete');
+                    todoRow.classList.remove('complete');
+                    todoPriority.classList.add(projectsList[index]['todos'][i]['priority']);
+                    todoPriority.innerText = projectsList[index]['todos'][i]['initialPriority'];
+                };
+                DisplayController.resetContent();
+                DisplayController.showProjectsTab();
+            }); 
+
+            
+        };
+        
     }
 
     static showProjectsTab() {
@@ -445,6 +555,14 @@ class DisplayController {
         // add header
         const header = document.getElementById('header');
         header.innerText = 'Projects';
+        // reset content div to 2 columns
+        const contentContainer = document.getElementById('content');
+        contentContainer.style.gridTemplateColumns = 'auto auto';
+        // for each Project
+        for (let i = 0; i < projectsList.length; i++) {
+            // build a card
+            this.buildProjectCard(i);
+        };
     };   
 
     // Show new task modal
@@ -560,7 +678,7 @@ class DisplayController {
                 projectInfo.title = title;
                 projectInfo.dueDate = dueDate;
                 projectInfo.description = description;
-                let newProject = createProject(projectInfo.title, projectInfo.dueDate, projectInfo.description);
+                let newProject = createProject(projectInfo.title, projectInfo.description, projectInfo.dueDate);
                 // reset form and refresh dashboard
                 form.reset();
                 let header = document.getElementById('header');
@@ -583,6 +701,7 @@ class DisplayController {
         oldlist.forEach(item => { item.remove()});
 
         // display tasks
+
         for (let i = todoList.length - 1; i >= 0; i--) {
             const todoListDiv = document.createElement('div');
             todoListDiv.classList.add('task-list-div');
