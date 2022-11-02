@@ -13,8 +13,6 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
 ## To-do:
 
 * Actions:
-    
-    * display one Project
     * edit a Project
     * toggle Project complete
     * delete a Project
@@ -22,6 +20,7 @@ View my [Figma mock-up](https://www.figma.com/proto/nmmcav6BnRT6YEon8Egdea/Untit
     * set Project to overdue
     * check Todo overdue status
     * set Todo to overdue
+    * ~~display one Project~~ done
     * ~~display all Projects in projectList array~~ done
     * ~~make new Project~~ done 
     * ~~add Todo to Project.todos~~ done
