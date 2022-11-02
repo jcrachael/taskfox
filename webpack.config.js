@@ -18,7 +18,7 @@ module.exports = {
         filename: '[name]-[contenthash].js',
         clean: true,
         assetModuleFilename: '[name][ext]',
-        publicPath: '/taskfox/',
+        publicPath: '/',
     },
 
     // dev server
